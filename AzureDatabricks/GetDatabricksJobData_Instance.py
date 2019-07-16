@@ -4,17 +4,21 @@ try:
     import requests
     import sys
     import traceback
+    from datetime import datetime
+    from influxdb import InfluxDBClient
+    from influxdb.exceptions import InfluxDBClientError
 except Exception as error:
     print(error)
     sys.exit(201)
 
 try:
     TIMEOUT = 60  #sec
-    ENV_NAME = 'engg-az-dev2'
+    ENV_NAME = 'boden-dev'
     DOMAIN = 'eastus.azuredatabricks.net'
     TOKEN = b'dapi059eecaf6835aafbd02def39b82f7976'
     LIST_URL = 'https://%s/api/2.0/jobs/list' % (DOMAIN)
     HEADERS = {"Content-Type": "application/json", "Authorization": b"Basic " + base64.standard_b64encode(b"token:" + TOKEN)}
+    client =  InfluxDBClient(host='influxdb', port=8186, database='sensu')
 
     def callApi(env_name, job_id):
         try:
@@ -32,6 +36,9 @@ try:
 
                                 if job_life == 'TERMINATED':
                                     last_run = run['state']['result_state']
+
+                                elif job_life == 'SKIPPED':
+                                    last_run = 'SKIPPED'
 
                                 elif job_life == 'PENDING' or job_life == 'RUNNING':
                                     try:
@@ -51,8 +58,9 @@ try:
                                         print('Error fetching azure databricks job data:', str(e))
                                         sys.exit(2)
 
-                                if last_run == 'CANCELED' or last_run == 'FAILED':
+                                if last_run == 'CANCELED' or last_run == 'FAILED' or last_run == 'SKIPPED':
                                     last_run_status=1
+
                                 elif last_run == 'SUCCESS':
                                     last_run_status=0
 
@@ -66,7 +74,35 @@ try:
                             if 'settings' in job and 'new_cluster' in job['settings'] and 'custom_tags' in job['settings']['new_cluster'] and 'TENANT_ID' in job['settings']['new_cluster']['custom_tags']:
                                 tenant_id = job['settings']['new_cluster']['custom_tags']['TENANT_ID']
 
-                        print("%s %s %s %s %s" % (job_id, env_name, tenant_id, job_name, last_run_status))
+                        print("%s %s %s %s %s %s" % (job_id, env_name, tenant_id, job_name, last_run, last_run_status))
+
+                        # Write results into influx
+                        measurement = 'pd_jobs_status'
+                        utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+                        json_body = [{
+                            "measurement": measurement,
+                            "tags": {
+                                "jobid": job_id,
+                                "envname": env_name,
+                                "tenant": tenant_id,
+                                "jobname": job_name,
+                                "lastrun": last_run
+                            },
+                            "time": utc_time,
+                            "fields": {
+                                "status": last_run_status
+                            }
+                        }]
+                        try:
+                            client.write_points(json_body)
+                        except InfluxDBClientError as e:
+                            print('ERROR: could not insert data to influxdb:', str(e))
+                        except:
+                            e = sys.exc_info()[0]
+                            print('ERROR: could not insert data to influxdb:', str(e))
+                        else:
+                            pass
+
 
         except requests.exceptions.Timeout:
             print('request %s timed out (', TIMEOUT, 'sec) <br>' % (DOMAIN))
@@ -99,6 +135,9 @@ try:
     except requests.exceptions.RequestException as e:
         print('Error fetching azure databricks job data:', str(e))
         sys.exit(2)
+
+    client.close()
+    sys.exit(201)
 
 except Exception as error:
     print(error)
