@@ -1,10 +1,12 @@
 try:
     import json
     import base64
-    import requests
     import sys
+    #sys.path.insert(0, '/usr/python-packages/dn-requests/')
+    import requests
     import traceback
     from datetime import datetime
+    #sys.path.insert(0, '/usr/python-packages/dn-influxdb/')
     from influxdb import InfluxDBClient
     from influxdb.exceptions import InfluxDBClientError
 except Exception as error:
