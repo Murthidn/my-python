@@ -2,6 +2,7 @@ try:
     import json
     import base64
     import sys
+    import os
     #sys.path.insert(0, '/usr/python-packages/dn-requests/')
     import requests
     import traceback
@@ -15,7 +16,7 @@ except Exception as error:
 
 try:
     TIMEOUT = 60  #sec
-    ENV_NAME = 'boden-dev'
+    ENV_NAME = os.environ['envname']
     DOMAIN = 'eastus.azuredatabricks.net'
     TOKEN = b'dapi059eecaf6835aafbd02def39b82f7976'
     LIST_URL = 'https://%s/api/2.0/jobs/list' % (DOMAIN)
