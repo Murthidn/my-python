@@ -15,7 +15,7 @@ except Exception as error:
     sys.exit(201)
 
 try:
-    TIMEOUT = 60  #sec
+    TIMEOUT = 60 #sec
     ENV_NAME = os.environ['envname']
     DOMAIN = 'eastus.azuredatabricks.net'
     TOKEN = b'dapi059eecaf6835aafbd02def39b82f7976'
