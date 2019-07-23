@@ -22,36 +22,15 @@ except Exception as error:
     sys.exit(201)
 
 try:
-
-    # Start Point (1)
     ENV_NAME = os.environ['envname']
-
-    # Getting Region Name
-    METADATA_URL='http://169.254.169.254/metadata/instance?api-version=2017-08-01'
-    METADATA_HEADERS = {'Metadata': 'true'}
-    getMetaData = clientRequest(METADATA_URL, METADATA_HEADERS)
-
-    if getMetaData.status_code == 200 and 'compute' in getMetaData.json() and 'location' in getMetaData.json()['compute']:
-        location = getMetaData.json()['compute']['location']
-        DOMAIN = location + '.azuredatabricks.net'
-
-    else:
-        print("Error while fetching metadata")
-
-    # Getting Token
-    #TOKEN = b'dapi059eecaf6835aafbd02def39b82f7976'
+    location=getRegion()
+    DOMAIN = location + '.azuredatabricks.net'
     subscription = os.environ['subName'] #'Riversand Violet - Non-Production'
     getAuth(location, subscription)
-
     TOKEN = getToken()
-
-    # Common Headers
     HEADERS = {"Content-Type": "application/json", "Authorization": "Bearer " + TOKEN}
-
-    # Influx Client Initialization
     client = InfluxDBClient(host='influxdb', port=8186, database='sensu')
 
-    # Getting Job data and storing in Influx (4)
     def getJobData(env_name, job_id):
         RUNS_URL = 'https://%s/api/2.0/jobs/runs/list?job_id=%s&active_only=false&offset=0&limit=1' % (DOMAIN, job_id)
         job_runs = clientRequest(RUNS_URL, HEADERS)
@@ -126,11 +105,9 @@ try:
                 else:
                     pass
 
-    # Getting all jobs list (2)
     LIST_URL = 'https://%s/api/2.0/jobs/list' % (DOMAIN)
     jobs = clientRequest(LIST_URL, HEADERS)
 
-    # Getting specific environment (3)
     if jobs.status_code == 200:
         for job in jobs.json()['jobs']:
 
@@ -145,7 +122,6 @@ try:
                 env_name = job['settings']['new_cluster']['custom_tags']['ENV_NAME']
                 if env_name == ENV_NAME:
                     getJobData(env_name, job['job_id'])
-
 
     client.close()
     sys.exit(201)

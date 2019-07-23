@@ -75,3 +75,14 @@ def getToken():
                 return fields[1]
         else:
             continue
+
+def getRegion():
+    METADATA_URL = 'http://169.254.169.254/metadata/instance?api-version=2017-08-01'
+    METADATA_HEADERS = {'Metadata': 'true'}
+    getMetaData = clientRequest(METADATA_URL, METADATA_HEADERS)
+
+    if getMetaData.status_code == 200 and 'compute' in getMetaData.json() and 'location' in getMetaData.json()['compute']:
+        return getMetaData.json()['compute']['location']
+
+    else:
+        print("Error while fetching metadata")
