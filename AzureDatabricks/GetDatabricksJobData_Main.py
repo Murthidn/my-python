@@ -23,11 +23,11 @@ except Exception as error:
 
 try:
     ENV_NAME = os.environ['envname']
-    location=getRegion()
-    DOMAIN = location + '.azuredatabricks.net'
-    subscription = os.environ['subName'] #'Riversand Violet - Non-Production'
-    getAuth(location, subscription)
-    TOKEN = getToken()
+    LOCATION=getAzureRegionName()
+    DOMAIN = LOCATION + '.azuredatabricks.net'
+    SUBSCRIPTION = os.environ['subName'] #'Riversand Violet - Non-Production'
+    getNetrcFile(LOCATION, SUBSCRIPTION)
+    TOKEN = getDatabricksTokenFromNetrcFile()
     HEADERS = {"Content-Type": "application/json", "Authorization": "Bearer " + TOKEN}
     client = InfluxDBClient(host='influxdb', port=8186, database='sensu')
 
@@ -76,7 +76,7 @@ try:
                     if 'settings' in job and 'new_cluster' in job['settings'] and 'custom_tags' in job['settings']['new_cluster'] and 'TENANT_ID' in job['settings']['new_cluster']['custom_tags']:
                         tenant_id = job['settings']['new_cluster']['custom_tags']['TENANT_ID']
 
-                print("%s %s %s %s %s %s" % (job_id, env_name, tenant_id, job_name, last_run, last_run_status))
+                print(job_id, env_name, tenant_id, job_name, last_run, last_run_status)
 
                 # Writing results into Influx (5)
                 measurement = 'pd_jobs_status'

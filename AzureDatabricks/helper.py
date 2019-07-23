@@ -18,22 +18,22 @@ TOKEN = None
 
 # REST API Access
 def clientRequest(getURL, getHeaders):
-        TIMEOUT = 60  # sec
-        try:
-            response = requests.get(getURL, headers=getHeaders, timeout=TIMEOUT)
+    TIMEOUT = 60  # sec
+    try:
+        response = requests.get(getURL, headers=getHeaders, timeout=TIMEOUT)
 
-        except requests.exceptions.Timeout:
-            print('request timed out (', TIMEOUT, 'sec) <br>')
-            sys.exit(2)
+    except requests.exceptions.Timeout:
+        print('request timed out (', TIMEOUT, 'sec) <br>')
+        sys.exit(2)
 
-        except requests.exceptions.RequestException as e:
-            print('Error fetching data:', str(e))
-            sys.exit(2)
+    except requests.exceptions.RequestException as e:
+        print('Error fetching data:', str(e))
+        sys.exit(2)
 
-        return response
+    return response
 
 
-def getAuth(location, subscription):
+def getNetrcFile(location, subscription):
 
     netrc_filename='.netrc_'+location
 
@@ -54,12 +54,10 @@ def getAuth(location, subscription):
                 src = os.path.join(root, netrc_filename)
                 copyfile(src, HOME+'/.netrc')
     else:
-        print("File not exist")
+        print("Sensu is not configured to handle "+location+" region. Please contact DevOps team to configure Databricks automation for this region.")
         sys.exit(201)
 
-
-
-def getToken():
+def getDatabricksTokenFromNetrcFile():
     file = open(HOME + '/.netrc')
 
     for line in file:
@@ -76,7 +74,7 @@ def getToken():
         else:
             continue
 
-def getRegion():
+def getAzureRegionName():
     METADATA_URL = 'http://169.254.169.254/metadata/instance?api-version=2017-08-01'
     METADATA_HEADERS = {'Metadata': 'true'}
     getMetaData = clientRequest(METADATA_URL, METADATA_HEADERS)
