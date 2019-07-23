@@ -4,7 +4,6 @@
     <list default="true" id="61395920-6da1-4756-835f-0ac73914a79e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AzureDatabricks/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/AzureDatabricks/helper.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AzureDatabricks/helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1482">
-              <caret line="78" column="16" lean-forward="true" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+            <state relative-caret-position="256">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -26,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+            <state relative-caret-position="179">
+              <caret line="61" column="48" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -66,6 +65,12 @@
       <find>HOME</find>
       <find>dst</find>
       <find>location</find>
+      <find>second_run</find>
+      <find>result_state</find>
+      <find>LOCATION</find>
+      <find>SUBSCRIPTION</find>
+      <find>job_life</find>
+      <find>job</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,6 +107,7 @@
         <option value="$PROJECT_DIR$/Others/GetDatabricksJobData_All.py" />
         <option value="$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Instance3.py" />
         <option value="$PROJECT_DIR$/AzureDatabricks/helper.py" />
+        <option value="$PROJECT_DIR$/Others/GetDatabricksJobData_Instance.py" />
         <option value="$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py" />
       </list>
     </option>
@@ -118,6 +124,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,11 +137,15 @@
               <item name="my-python" type="462c0819:PsiDirectoryNode" />
               <item name="AzureDatabricks" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="my-python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-python" type="462c0819:PsiDirectoryNode" />
+              <item name="Others" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -168,8 +179,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GetDatabricksJobData_All">
-    <configuration name="GetDatabricksJobData_All" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.GetDatabricksJobData_Main">
+    <configuration name="GetDatabricksJobData_Instance" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="my-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -181,7 +192,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Others/GetDatabricksJobData_All.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Others/GetDatabricksJobData_Instance.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GetDatabricksJobData_Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="my-python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AzureDatabricks" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -203,27 +235,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Others/Test2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="abc" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="my-python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Others" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Others/abc.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -276,11 +287,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.GetDatabricksJobData_Main" />
+        <item itemvalue="Python.GetDatabricksJobData_Instance" />
         <item itemvalue="Python.test3" />
         <item itemvalue="Python.Test2" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.GetDatabricksJobData_All" />
-        <item itemvalue="Python.abc" />
       </list>
     </recent_temporary>
   </component>
@@ -337,13 +348,13 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.116071425" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.116071425" />
       <window_info id="Structure" order="1" sideWeight="0.5008183" side_tool="true" weight="0.18080357" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28150573" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5057283" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3535188" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5139116" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -393,6 +404,11 @@
           <url>file://$PROJECT_DIR$/Others/abc.py</url>
           <line>3</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py</url>
+          <line>118</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -474,13 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Others/GetDatabricksJobData_Instance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Others/GetDatabricksJobData_All.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -491,15 +500,29 @@
     <entry file="file://$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Instance3.py" />
     <entry file="file://$PROJECT_DIR$/AzureDatabricks/helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1482">
-          <caret line="78" column="16" lean-forward="true" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+        <state relative-caret-position="256">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/urllib3/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2029">
+          <caret line="571" column="42" lean-forward="true" selection-start-line="571" selection-start-column="42" selection-end-line="571" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Others/GetDatabricksJobData_Instance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        <state relative-caret-position="179">
+          <caret line="61" column="48" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="48" />
         </state>
       </provider>
     </entry>

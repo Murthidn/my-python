@@ -57,8 +57,15 @@ try:
 
                             if job_run_prev.status_code == 200:
                                 for second_run in job_run_prev.json()['runs']:
-                                    last_run = second_run['state']['result_state']
 
+                                    if 'state' in second_run and 'life_cycle_state' in second_run['state']:
+                                        job_life = second_run['state']['life_cycle_state']
+
+                                        if job_life == 'TERMINATED':
+                                            last_run = second_run['state']['result_state']
+
+                                        elif job_life == 'SKIPPED':
+                                            last_run = 'SKIPPED'
 
                         if last_run == 'CANCELED' or last_run == 'FAILED' or last_run == 'SKIPPED':
                             last_run_status = 1
