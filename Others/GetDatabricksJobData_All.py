@@ -11,9 +11,9 @@ except Exception as error:
 try:
     TIMEOUT = 60  #sec
     DOMAIN = 'eastus.azuredatabricks.net'
-    TOKEN = b'dapi059eecaf6835aafbd02def39b82f7976'
+    TOKEN = 'dapi059eecaf6835aafbd02def39b82f7976'
     LIST_URL = 'https://%s/api/2.0/jobs/list' % (DOMAIN)
-    HEADERS = {"Content-Type": "application/json", "Authorization": b"Basic " + base64.standard_b64encode(b"token:" + TOKEN)}
+    HEADERS = {"Content-Type": "application/json", "Authorization": "Bearer " + TOKEN}
 
     try:
         jobs = requests.get(LIST_URL, headers=HEADERS, timeout=TIMEOUT)
