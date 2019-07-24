@@ -38,7 +38,7 @@ try:
         if job_runs.status_code == 200 and 'has_more' in job_runs.json():
             isHasMore = job_runs.json()['has_more']
 
-            if isHasMore == True and 'runs' in job_runs.json():
+            if isHasMore == True or 'runs' in job_runs.json():
                 for run in job_runs.json()['runs']:
 
                     if 'state' in run and 'life_cycle_state' in run['state']:
