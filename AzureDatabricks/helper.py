@@ -12,7 +12,7 @@ except Exception as error:
     print(error)
     sys.exit(201)
 
-HOME = '/etc/sensu/plugins'
+HOME = '/root'
 DOMAIN = None
 TOKEN = None
 
@@ -47,23 +47,23 @@ def getNetrcFile(location, subscription):
     else:
         netrc_filename = netrc_filename +"_non-prod"
 
-    file = pathlib.Path(HOME+"/helpers/"+netrc_filename)
+    file = pathlib.Path(HOME+'/'+netrc_filename)
     if file.exists():
-        for root, dirs, files in os.walk(HOME+'/helpers'):
+        for root, dirs, files in os.walk(HOME):
             if netrc_filename in files:
                 src = os.path.join(root, netrc_filename)
-                copyfile(src, HOME+'/.netrc')
+                copyfile(src, '/etc/sensu/plugins/.netrc')
     else:
         print("Sensu is not configured to handle "+location+" region. Please contact DevOps team to configure Databricks automation for this region.")
         sys.exit(201)
 
 def getDatabricksTokenFromNetrcFile():
-    file = open(HOME + '/.netrc')
+    file = open('/etc/sensu/plugins/.netrc')
 
     for line in file:
         if line.strip():
             fields = line.strip().split()
-            if fields[1] == 'token':
+            if fields[1].endswith('@riversand.com'):
                 continue
 
             elif fields[1].endswith('.azuredatabricks.net'):
