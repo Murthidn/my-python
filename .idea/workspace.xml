@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="61395920-6da1-4756-835f-0ac73914a79e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AzureDatabricks/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/AzureDatabricks/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Others/GetDatabricksJobData_Alert.py" beforeDir="false" afterPath="$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Alert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Others/abc.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,23 +15,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AzureDatabricks/helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="85" column="28" lean-forward="true" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
-              <folding>
-                <element signature="e#348#715#0" />
-              </folding>
+            <state relative-caret-position="266">
+              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py">
+        <entry file="file://$PROJECT_DIR$/Others/GetDatabricksJobData_Instance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+            <state relative-caret-position="304">
+              <caret line="33" column="44" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -74,6 +82,7 @@
       <find>SUBSCRIPTION</find>
       <find>job_life</find>
       <find>job</find>
+      <find>hasmo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -108,9 +117,9 @@
         <option value="$PROJECT_DIR$/Others/abc.py" />
         <option value="$PROJECT_DIR$/Others/GetDatabricksJobData_All.py" />
         <option value="$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Instance3.py" />
-        <option value="$PROJECT_DIR$/Others/GetDatabricksJobData_Instance.py" />
         <option value="$PROJECT_DIR$/AzureDatabricks/helper.py" />
         <option value="$PROJECT_DIR$/Others/First.py" />
+        <option value="$PROJECT_DIR$/Others/GetDatabricksJobData_Instance.py" />
         <option value="$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py" />
       </list>
     </option>
@@ -166,8 +175,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Git\my-python\Others" />
       <recent name="F:\Git\my-python\AzureDatabricks" />
+      <recent name="F:\Git\my-python\Others" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -182,7 +191,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GetDatabricksJobData_Main">
+  <component name="RunManager" selected="Python.GetDatabricksJobData_Instance">
     <configuration name="GetDatabricksJobData_Instance" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="my-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -290,11 +299,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.GetDatabricksJobData_Instance" />
         <item itemvalue="Python.test3" />
         <item itemvalue="Python.Test2" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.GetDatabricksJobData_Main" />
-        <item itemvalue="Python.GetDatabricksJobData_Instance" />
       </list>
     </recent_temporary>
   </component>
@@ -351,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563891924730</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update">
+      <created>1563942154526</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563942154526</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -364,7 +380,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3535188" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5139116" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.48281506" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -411,15 +427,25 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Others/abc.py</url>
-          <line>3</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/Others/GetDatabricksJobData_Instance.py</url>
+          <line>126</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Others/GetDatabricksJobData_Instance.py</url>
+          <line>131</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>job_runs</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>jobs</expression-string>
         <language-id>Python</language-id>
@@ -464,20 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Others/GetDatabricksJobData_Alert.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-504">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Others/abc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="122" lean-forward="true" selection-start-line="8" selection-start-column="122" selection-end-line="8" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Others/GetDatabricksJobData_Instance2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2584">
@@ -500,13 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Others/GetDatabricksJobData_Instance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Others/First.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -517,20 +522,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py">
+    <entry file="file://$PROJECT_DIR$/AzureDatabricks/helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+        <state relative-caret-position="266">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AzureDatabricks/helper.py">
+    <entry file="file://$PROJECT_DIR$/Others/abc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="85" column="28" lean-forward="true" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
-          <folding>
-            <element signature="e#348#715#0" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="8" column="122" lean-forward="true" selection-start-line="8" selection-start-column="122" selection-end-line="8" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Alert.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Others/GetDatabricksJobData_Instance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AzureDatabricks/GetDatabricksJobData_Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>
