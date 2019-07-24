@@ -25,7 +25,7 @@ try:
     ENV_NAME = os.environ['envname']
     LOCATION=getAzureRegionName()
     DOMAIN = LOCATION + '.azuredatabricks.net'
-    SUBSCRIPTION = os.environ['subName'] #'Riversand Violet - Non-Production'
+    SUBSCRIPTION = os.environ['subscription'] #'Riversand Violet - Non-Production'
     getNetrcFile(LOCATION, SUBSCRIPTION)
     TOKEN = getDatabricksTokenFromNetrcFile()
     HEADERS = {"Content-Type": "application/json", "Authorization": "Bearer " + TOKEN}
