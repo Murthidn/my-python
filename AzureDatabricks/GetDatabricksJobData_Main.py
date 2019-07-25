@@ -47,7 +47,7 @@ try:
                         if job_life == 'TERMINATED':
                             last_run = run['state']['result_state']
 
-                        if job_life == 'INTERNAL_ERROR':
+                        elif job_life == 'INTERNAL_ERROR':
                             last_run = run['state']['result_state']
 
                         elif job_life == 'SKIPPED':
@@ -97,15 +97,15 @@ try:
                 json_body = [{
                     "measurement": measurement,
                     "tags": {
-                        "jobid": job_id,
                         "envname": env_name,
                         "tenant": tenant_id,
-                        "jobname": job_name,
                         "lastrun": last_run
                     },
                     "time": utc_time,
                     "fields": {
-                        "status": last_run_status
+                        "status": last_run_status,
+                        "jobid": job_id,
+                        "jobname": job_name
                     }
                 }]
                 try:

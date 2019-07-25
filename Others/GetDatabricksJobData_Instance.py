@@ -3,11 +3,11 @@ try:
     import base64
     import sys
     import os
-    #sys.path.insert(0, '/usr/python-packages/dn-requests/')
+    sys.path.insert(0, '/usr/python-packages/dn-requests/')
     import requests
     import traceback
     from datetime import datetime
-    #sys.path.insert(0, '/usr/python-packages/dn-influxdb/')
+    sys.path.insert(0, '/usr/python-packages/dn-influxdb/')
     from influxdb import InfluxDBClient
     from influxdb.exceptions import InfluxDBClientError
 except Exception as error:
@@ -40,6 +40,9 @@ try:
                                 if job_life == 'TERMINATED':
                                     last_run = run['state']['result_state']
 
+                                elif job_life == 'INTERNAL_ERROR':
+                                    last_run = run['state']['result_state']
+
                                 elif job_life == 'SKIPPED':
                                     last_run = 'SKIPPED'
 
@@ -50,7 +53,18 @@ try:
 
                                         if job_run_prev.status_code == 200:
                                             for second_run in job_run_prev.json()['runs']:
-                                                last_run = second_run['state']['result_state']
+
+                                                if 'state' in second_run and 'life_cycle_state' in second_run['state']:
+                                                    job_life = second_run['state']['life_cycle_state']
+
+                                                    if job_life == 'TERMINATED':
+                                                        last_run = second_run['state']['result_state']
+
+                                                    elif job_life == 'INTERNAL_ERROR':
+                                                        last_run = run['state']['result_state']
+
+                                                    elif job_life == 'SKIPPED':
+                                                        last_run = 'SKIPPED'
 
 
                                     except requests.exceptions.Timeout:
@@ -85,15 +99,15 @@ try:
                         json_body = [{
                             "measurement": measurement,
                             "tags": {
-                                "jobid": job_id,
                                 "envname": env_name,
                                 "tenant": tenant_id,
-                                "jobname": job_name,
                                 "lastrun": last_run
                             },
                             "time": utc_time,
                             "fields": {
-                                "status": last_run_status
+                                "status": last_run_status,
+                                "jobid": job_id,
+                                "jobname": job_name
                             }
                         }]
                         try:
