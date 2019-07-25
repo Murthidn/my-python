@@ -14,8 +14,8 @@ try:
     from influxdb import InfluxDBClient
     from influxdb.exceptions import InfluxDBClientError
 
-    #from helper import *
-    from AzureDatabricks.helper import *
+    from helper import *
+    #from AzureDatabricks.helper import *
 
 except Exception as error:
     print(error)
