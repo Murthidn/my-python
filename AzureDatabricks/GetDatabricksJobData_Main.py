@@ -47,6 +47,9 @@ try:
                         if job_life == 'TERMINATED':
                             last_run = run['state']['result_state']
 
+                        if job_life == 'INTERNAL_ERROR':
+                            last_run = run['state']['result_state']
+
                         elif job_life == 'SKIPPED':
                             last_run = 'SKIPPED'
 
@@ -63,6 +66,9 @@ try:
 
                                         if job_life == 'TERMINATED':
                                             last_run = second_run['state']['result_state']
+
+                                        elif job_life == 'INTERNAL_ERROR':
+                                            last_run = run['state']['result_state']
 
                                         elif job_life == 'SKIPPED':
                                             last_run = 'SKIPPED'
