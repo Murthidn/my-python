@@ -99,13 +99,13 @@ try:
                     "tags": {
                         "envname": env_name,
                         "tenant": tenant_id,
+                        "jobname": job_name,
                         "lastrun": last_run
                     },
                     "time": utc_time,
                     "fields": {
                         "status": last_run_status,
-                        "jobid": job_id,
-                        "jobname": job_name
+                        "jobid": job_id
                     }
                 }]
                 try:
