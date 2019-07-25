@@ -14,8 +14,8 @@ try:
     from influxdb import InfluxDBClient
     from influxdb.exceptions import InfluxDBClientError
 
-    #from helper import *
-    from AzureDatabricks.helper import *
+    from helper import *
+    #from AzureDatabricks.helper import *
 
 except Exception as error:
     print(error)
@@ -25,7 +25,7 @@ try:
     ENV_NAME = os.environ['envname']
     LOCATION=getAzureRegionName()
     DOMAIN = LOCATION + '.azuredatabricks.net'
-    SUBSCRIPTION = os.environ['subName'] #'Riversand Violet - Non-Production'
+    SUBSCRIPTION = os.environ['subscription'] #'Riversand Violet - Non-Production'
     getNetrcFile(LOCATION, SUBSCRIPTION)
     TOKEN = getDatabricksTokenFromNetrcFile()
     HEADERS = {"Content-Type": "application/json", "Authorization": "Bearer " + TOKEN}
@@ -47,6 +47,9 @@ try:
                         if job_life == 'TERMINATED':
                             last_run = run['state']['result_state']
 
+                        if job_life == 'INTERNAL_ERROR':
+                            last_run = run['state']['result_state']
+
                         elif job_life == 'SKIPPED':
                             last_run = 'SKIPPED'
 
@@ -63,6 +66,9 @@ try:
 
                                         if job_life == 'TERMINATED':
                                             last_run = second_run['state']['result_state']
+
+                                        elif job_life == 'INTERNAL_ERROR':
+                                            last_run = run['state']['result_state']
 
                                         elif job_life == 'SKIPPED':
                                             last_run = 'SKIPPED'

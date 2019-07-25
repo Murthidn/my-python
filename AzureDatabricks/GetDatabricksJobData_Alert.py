@@ -13,7 +13,7 @@ try:
     critical = False
     exit_status = 0
 
-    query = ("select * from pd_jobs_status where lastrun = 'FAILED' and time >= now() - 300m order by time desc")
+    query = ("select * from pd_jobs_status where lastrun = 'FAILED' and time >= now() - 30m order by time desc")
     rs = uc.query_influx(query)
 
     if rs is None or len(rs) <= 0:
