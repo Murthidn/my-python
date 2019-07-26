@@ -3,6 +3,7 @@ try:
     import os
     import json
     import base64
+    import time
     import traceback
 
     sys.path.insert(0, '/usr/python-packages/dn-requests/')
@@ -44,13 +45,11 @@ try:
                     if 'state' in run and 'life_cycle_state' in run['state']:
                         job_life = run['state']['life_cycle_state']
 
-                        if job_life == 'TERMINATED':
+                        if job_life == 'TERMINATED' or job_life == 'INTERNAL_ERROR':
                             last_run = run['state']['result_state']
 
                         elif job_life == 'TERMINATING':
-                            last_run = second_run['state']['result_state']
-
-                        elif job_life == 'INTERNAL_ERROR':
+                            time.sleep(10)
                             last_run = run['state']['result_state']
 
                         elif job_life == 'SKIPPED':
@@ -68,14 +67,12 @@ try:
                                         if 'state' in second_run and 'life_cycle_state' in second_run['state']:
                                             job_life = second_run['state']['life_cycle_state']
 
-                                            if job_life == 'TERMINATED':
+                                            if job_life == 'TERMINATED' or job_life == 'INTERNAL_ERROR':
                                                 last_run = second_run['state']['result_state']
 
                                             elif job_life == 'TERMINATING':
+                                                time.sleep(10)
                                                 last_run = second_run['state']['result_state']
-
-                                            elif job_life == 'INTERNAL_ERROR':
-                                                last_run = run['state']['result_state']
 
                                             elif job_life == 'SKIPPED':
                                                 last_run = 'SKIPPED'
