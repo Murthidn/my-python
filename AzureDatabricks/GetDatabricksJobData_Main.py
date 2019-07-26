@@ -3,6 +3,7 @@ try:
     import os
     import json
     import base64
+    import time
     import traceback
 
     sys.path.insert(0, '/usr/python-packages/dn-requests/')
@@ -48,6 +49,7 @@ try:
                             last_run = run['state']['result_state']
 
                         elif job_life == 'TERMINATING':
+                            time.sleep(10)
                             last_run = second_run['state']['result_state']
 
                         elif job_life == 'INTERNAL_ERROR':
@@ -72,6 +74,7 @@ try:
                                                 last_run = second_run['state']['result_state']
 
                                             elif job_life == 'TERMINATING':
+                                                time.sleep(10)
                                                 last_run = second_run['state']['result_state']
 
                                             elif job_life == 'INTERNAL_ERROR':

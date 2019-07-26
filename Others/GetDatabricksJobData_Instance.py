@@ -3,6 +3,7 @@ try:
     import base64
     import sys
     import os
+    import time
     sys.path.insert(0, '/usr/python-packages/dn-requests/')
     import requests
     import traceback
@@ -41,6 +42,7 @@ try:
                                     last_run = run['state']['result_state']
 
                                 elif job_life == 'TERMINATING':
+                                    time.sleep(10)
                                     last_run = second_run['state']['result_state']
 
                                 elif job_life == 'INTERNAL_ERROR':
@@ -67,6 +69,7 @@ try:
                                                             last_run = second_run['state']['result_state']
 
                                                         elif job_life == 'TERMINATING':
+                                                            time.sleep(10)
                                                             last_run = second_run['state']['result_state']
 
                                                         elif job_life == 'INTERNAL_ERROR':
