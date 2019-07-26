@@ -47,6 +47,9 @@ try:
                         if job_life == 'TERMINATED':
                             last_run = run['state']['result_state']
 
+                        elif job_life == 'TERMINATING':
+                            last_run = second_run['state']['result_state']
+
                         elif job_life == 'INTERNAL_ERROR':
                             last_run = run['state']['result_state']
 
@@ -55,68 +58,79 @@ try:
 
                         # If current Job is in Pending or Running state, getting previous job status
                         elif job_life == 'PENDING' or job_life == 'RUNNING':
-                            PREV_RUNS_URL = 'https://%s/api/2.0/jobs/runs/list?job_id=%s&active_only=false&offset=1&limit=1' % (DOMAIN, job_id)
-                            job_run_prev = clientRequest(PREV_RUNS_URL, HEADERS)
+                            if isHasMore == True:
+                                PREV_RUNS_URL = 'https://%s/api/2.0/jobs/runs/list?job_id=%s&active_only=false&offset=1&limit=1' % (DOMAIN, job_id)
+                                job_run_prev = clientRequest(PREV_RUNS_URL, HEADERS)
 
-                            if job_run_prev.status_code == 200:
-                                for second_run in job_run_prev.json()['runs']:
+                                if job_run_prev.status_code == 200:
+                                    for second_run in job_run_prev.json()['runs']:
 
-                                    if 'state' in second_run and 'life_cycle_state' in second_run['state']:
-                                        job_life = second_run['state']['life_cycle_state']
+                                        if 'state' in second_run and 'life_cycle_state' in second_run['state']:
+                                            job_life = second_run['state']['life_cycle_state']
 
-                                        if job_life == 'TERMINATED':
-                                            last_run = second_run['state']['result_state']
+                                            if job_life == 'TERMINATED':
+                                                last_run = second_run['state']['result_state']
 
-                                        elif job_life == 'INTERNAL_ERROR':
-                                            last_run = run['state']['result_state']
+                                            elif job_life == 'TERMINATING':
+                                                last_run = second_run['state']['result_state']
 
-                                        elif job_life == 'SKIPPED':
-                                            last_run = 'SKIPPED'
+                                            elif job_life == 'INTERNAL_ERROR':
+                                                last_run = run['state']['result_state']
 
-                        if last_run == 'CANCELED' or last_run == 'FAILED' or last_run == 'SKIPPED':
-                            last_run_status = 1
+                                            elif job_life == 'SKIPPED':
+                                                last_run = 'SKIPPED'
 
-                        elif last_run == 'SUCCESS':
-                            last_run_status = 0
+                            else:
+                                print('Current job ' + str(job_id) + ' is in ' + job_life + ' state and it is first run, try again later')
+                                continue
 
-                if 'settings' in job and 'name' in job['settings']:
-                    job_name = job['settings']['name']
+                    if last_run == 'CANCELED' or last_run == 'FAILED' or last_run == 'SKIPPED':
+                        last_run_status = 1
 
-                if 'settings' in job and 'notebook_task' in job['settings'] and 'base_parameters' in job['settings']['notebook_task'] and 'tenantId' in job['settings']['notebook_task']['base_parameters']:
-                    tenant_id = job['settings']['notebook_task']['base_parameters']['tenantId']
+                    elif last_run == 'SUCCESS':
+                        last_run_status = 0
 
-                else:
-                    if 'settings' in job and 'new_cluster' in job['settings'] and 'custom_tags' in job['settings']['new_cluster'] and 'TENANT_ID' in job['settings']['new_cluster']['custom_tags']:
-                        tenant_id = job['settings']['new_cluster']['custom_tags']['TENANT_ID']
+                    if 'settings' in job and 'name' in job['settings']:
+                        job_name = job['settings']['name']
 
-                print(job_id, env_name, tenant_id, job_name, last_run, last_run_status)
+                    if 'settings' in job and 'notebook_task' in job['settings'] and 'base_parameters' in job['settings']['notebook_task'] and 'tenantId' in job['settings']['notebook_task']['base_parameters']:
+                        tenant_id = job['settings']['notebook_task']['base_parameters']['tenantId']
 
-                # Writing results into Influx (5)
-                measurement = 'pd_jobs_status'
-                utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-                json_body = [{
-                    "measurement": measurement,
-                    "tags": {
-                        "envname": env_name,
-                        "tenant": tenant_id,
-                        "jobname": job_name,
-                        "lastrun": last_run
-                    },
-                    "time": utc_time,
-                    "fields": {
-                        "status": last_run_status,
-                        "jobid": job_id
-                    }
-                }]
-                try:
-                    client.write_points(json_body)
-                except InfluxDBClientError as e:
-                    print('ERROR: could not insert data to influxdb:', str(e))
-                except:
-                    e = sys.exc_info()[0]
-                    print('ERROR: could not insert data to influxdb:', str(e))
-                else:
-                    pass
+                    else:
+                        if 'settings' in job and 'new_cluster' in job['settings'] and 'custom_tags' in job['settings']['new_cluster'] and 'TENANT_ID' in job['settings']['new_cluster']['custom_tags']:
+                            tenant_id = job['settings']['new_cluster']['custom_tags']['TENANT_ID']
+
+                    print(job_id, env_name, tenant_id, job_name, last_run, last_run_status)
+
+                    # Writing results into Influx (5)
+                    measurement = 'pd_jobs_status'
+                    utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+                    json_body = [{
+                        "measurement": measurement,
+                        "tags": {
+                            "envname": env_name,
+                            "tenant": tenant_id,
+                            "jobname": job_name,
+                            "lastrun": last_run
+                        },
+                        "time": utc_time,
+                        "fields": {
+                            "status": last_run_status,
+                            "jobid": job_id
+                        }
+                    }]
+                    try:
+                        client.write_points(json_body)
+                    except InfluxDBClientError as e:
+                        print('ERROR: could not insert data to influxdb:', str(e))
+                    except:
+                        e = sys.exc_info()[0]
+                        print('ERROR: could not insert data to influxdb:', str(e))
+                    else:
+                        pass
+
+            else:
+                print('Job is not yet ran in ' + str(job_id))
 
     LIST_URL = 'https://%s/api/2.0/jobs/list' % (DOMAIN)
     jobs = clientRequest(LIST_URL, HEADERS)
