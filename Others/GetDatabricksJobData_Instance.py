@@ -117,12 +117,13 @@ try:
                                 "tags": {
                                     "envname": env_name,
                                     "tenant": tenant_id,
-                                    "jobname": job_name,
-                                    "lastrun": last_run
+                                    "jobname": job_name
                                 },
                                 "time": utc_time,
                                 "fields": {
                                     "status": last_run_status,
+                                    "lastrun": last_run,
+                                    "jobname": job_name,
                                     "jobid": job_id
                                 }
                             }]
