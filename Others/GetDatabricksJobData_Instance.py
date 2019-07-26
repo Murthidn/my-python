@@ -43,7 +43,7 @@ try:
 
                                 elif job_life == 'TERMINATING':
                                     time.sleep(10)
-                                    last_run = second_run['state']['result_state']
+                                    last_run = run['state']['result_state']
 
                                 elif job_life == 'INTERNAL_ERROR':
                                     last_run = run['state']['result_state']
@@ -73,7 +73,7 @@ try:
                                                             last_run = second_run['state']['result_state']
 
                                                         elif job_life == 'INTERNAL_ERROR':
-                                                            last_run = run['state']['result_state']
+                                                            last_run = second_run['state']['result_state']
 
                                                         elif job_life == 'SKIPPED':
                                                             last_run = 'SKIPPED'
