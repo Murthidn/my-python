@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "get-pd-jobs-data": {
+      "type": "metric",
+      "command": "python3.6 /etc/sensu/plugins/get-pd-jobs-data.py",
+      "subscribers": [
+        "sensu"
+      ],
+      "interval": 1800,
+      "occurrences": 1,
+      "handlers": [
+        "mailer"
+      ]
+    },
+    "get-pd-jobs-status-alert": {
+      "type": "metric",
+      "command": "python3.6 /etc/sensu/plugins/get-pd-jobs-status-alert.py",
+      "subscribers": [
+        "sensu"
+      ],
+      "interval": 2100,
+      "occurrences": 1,
+      "handlers": [
+        "mailer"
+      ]
+    }
+  }
+}
