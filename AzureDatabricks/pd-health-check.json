@@ -4,7 +4,7 @@
       "type": "metric",
       "command": "python3.6 /etc/sensu/plugins/get-pd-data.py",
       "subscribers": [
-        "sensu"
+        "roundrobin:proxyclient"
       ],
       "interval": 1800,
       "occurrences": 1,
@@ -16,7 +16,7 @@
       "type": "metric",
       "command": "python3.6 /etc/sensu/plugins/get-pd-check.py",
       "subscribers": [
-        "sensu"
+        "roundrobin:proxyclient"
       ],
       "interval": 2100,
       "occurrences": 1,
