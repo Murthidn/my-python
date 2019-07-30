@@ -1,0 +1,47 @@
+{
+  "filters": {
+    "opsfilter": {
+      "negate": false,
+      "attributes": {
+        "check": {
+          "status": "eval: value == 2",
+          "output": "eval: value != 'jiraticketexists\n'"
+        }
+      }
+    },
+    "mailerfilter": {
+      "negate": false,
+      "attributes": {
+        "check": {
+          "status": "eval: value == 0 || value == 2",
+          "history": "eval: value[-2] != 201"
+        }
+      }
+    },
+    "mailer2filter": {
+      "negate": false,
+      "attributes": {
+        "check": {
+          "status": "eval: value == 0 || value == 1 || value == 2"
+        }
+      }
+    },
+    "testerfilter": {
+      "negate": false,
+      "attributes": {
+        "check": {
+          "status": 201
+        },
+        "occurrences": "eval: value == 5"
+      }
+    },
+    "reportfilter": {
+      "negate": false,
+      "attributes": {
+        "check": {
+          "status": 3
+        }
+      }
+    }
+  }
+}

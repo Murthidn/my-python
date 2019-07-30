@@ -60,7 +60,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "decimals": null,
       "fill": 1,
       "gridPos": {
@@ -169,7 +169,7 @@
     },
     {
       "columns": [],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fontSize": "100%",
       "gridPos": {
         "h": 7,
@@ -285,7 +285,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_INFLUXDB}",
+        "datasource": "InfluxDB",
         "hide": 0,
         "includeAll": true,
         "label": "Tenant",
@@ -305,7 +305,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_INFLUXDB}",
+        "datasource": "InfluxDB",
         "hide": 0,
         "includeAll": true,
         "label": "Job Name",
