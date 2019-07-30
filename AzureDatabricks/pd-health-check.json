@@ -1,8 +1,8 @@
 {
   "checks": {
-    "get-pd-jobs-data": {
+    "get-pd-data": {
       "type": "metric",
-      "command": "python3.6 /etc/sensu/plugins/get-pd-jobs-data.py",
+      "command": "python3.6 /etc/sensu/plugins/get-pd-data.py",
       "subscribers": [
         "sensu"
       ],
@@ -12,9 +12,9 @@
         "mailer"
       ]
     },
-    "get-pd-jobs-status-alert": {
+    "get-pd-check": {
       "type": "metric",
-      "command": "python3.6 /etc/sensu/plugins/get-pd-jobs-status-alert.py",
+      "command": "python3.6 /etc/sensu/plugins/get-pd-check.py",
       "subscribers": [
         "sensu"
       ],
