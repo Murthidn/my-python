@@ -2,6 +2,7 @@ try:
     import sys
     import traceback
     import os
+    import jiracheck as ji
     import utilscommon as uc
 
 except Exception as error:
@@ -12,6 +13,9 @@ try:
     counter = 0
     critical = False
     exit_status = 0
+    check = sys.argv[1]
+    env_name = os.environ['envname']
+    possible_alert_name = "ENV:" + env_name + "|ALERT:proxyclient/" + check + ":CRITICAL"
 
     query = ("select * from pd_jobs_status where lastrun = 'FAILED' and time >= now() - 30m order by time desc")
     rs = uc.query_influx(query)
@@ -21,33 +25,37 @@ try:
         sys.exit(0)
 
     elif len(rs) > 0:
-        print('<h4>PD Job Status</h4>')
         critical = True
 
     if critical:
-        for k,v in rs.items():
-            print ('<table class="tg">')
-            print ('<tr>')
-            print ('<th>#</th>')
-            print ('<th>jobid</th>')
-            print ('<th>envname</th>')
-            print ('<th>tenant</th>')
-            print('<th>jobname</th>')
-            print('<th>lastrun</th>')
-            print('<th>status</th>')
-            print ('</tr>')
-            for val in v:
-                counter += 1
+        if ji.jira(possible_alert_name):
+            print("jiraticketexists")
+            sys.exit(2)
+        else:
+            print('<h4>PD Job Status</h4>')
+            for k,v in rs.items():
+                print ('<table class="tg">')
                 print ('<tr>')
-                print ('<td>' + str(counter) + '</td>')
-                print ('<td>' + str(val['jobid']) + '</td>')
-                print ('<td>' + str(val['envname']) + '</td>')
-                print ('<td>' + str(val['tenant']) + '</td>')
-                print('<td>' + str(val['jobname']) + '</td>')
-                print('<td>' + str(val['lastrun']) + '</td>')
-                print('<td>' + str(val['status']) + '</td>')
+                print ('<th>#</th>')
+                print ('<th>jobid</th>')
+                print ('<th>envname</th>')
+                print ('<th>tenant</th>')
+                print('<th>jobname</th>')
+                print('<th>lastrun</th>')
+                print('<th>status</th>')
                 print ('</tr>')
-        exit_status = 2
+                for val in v:
+                    counter += 1
+                    print ('<tr>')
+                    print ('<td>' + str(counter) + '</td>')
+                    print ('<td>' + str(val['jobid']) + '</td>')
+                    print ('<td>' + str(val['envname']) + '</td>')
+                    print ('<td>' + str(val['tenant']) + '</td>')
+                    print('<td>' + str(val['jobname']) + '</td>')
+                    print('<td>' + str(val['lastrun']) + '</td>')
+                    print('<td>' + str(val['status']) + '</td>')
+                    print ('</tr>')
+            exit_status = 2
 
     sys.exit(exit_status)
 

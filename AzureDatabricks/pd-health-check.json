@@ -4,9 +4,10 @@
       "type": "metric",
       "command": "python3.6 /etc/sensu/plugins/get-pd-data.py",
       "subscribers": [
-        "sensu"
+        "roundrobin:vm"
       ],
       "interval": 1800,
+      "source": "proxyclient",
       "occurrences": 1,
       "handlers": [
         "mailer"
@@ -14,14 +15,17 @@
     },
     "get-pd-check": {
       "type": "metric",
-      "command": "python3.6 /etc/sensu/plugins/get-pd-check.py",
+      "command": "python3.6 /etc/sensu/plugins/get-pd-check.py get-pd-check",
       "subscribers": [
-        "sensu"
+        "roundrobin:vm"
       ],
+      "resfresh": 2100,
       "interval": 2100,
+      "source": "proxyclient",
       "occurrences": 1,
       "handlers": [
-        "mailer"
+        "mailer",
+        "ops_mailer2"
       ]
     }
   }
