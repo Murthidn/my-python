@@ -10,22 +10,22 @@
       "source": "proxyclient",
       "occurrences": 1,
       "handlers": [
-        "mailer"
+        "mailer",
+        "tester_mailer"
       ]
     },
     "get-pd-check": {
       "type": "metric",
-      "command": "python3.6 /etc/sensu/plugins/get-pd-check.py get-pd-check",
+      "command": "python3.6 /etc/sensu/plugins/get-pd-check.py",
       "subscribers": [
         "roundrobin:vm"
       ],
-      "resfresh": 2100,
       "interval": 2100,
       "source": "proxyclient",
       "occurrences": 1,
       "handlers": [
         "mailer",
-        "ops_mailer2"
+        "tester_mailer"
       ]
     }
   }

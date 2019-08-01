@@ -10,18 +10,14 @@ try:
     counter = 0
     critical = False
     exit_status = 0
+    check = sys.argv[1]
     env_name = os.environ['envname']
     query = ("select * from pd_jobs_status where lastrun = 'FAILED' and time >= now() - 30m order by time desc")
     rs = uc.query_influx(query)
-    if rs is None:
-        print("WARNING: Could not fetch data from influxdb")
-        sys.exit(201)
-    else:
-        rsdata = list(rs.get_points())
-    if len(rsdata) == 0:
+    if rs is None or len(rs) <= 0:
         print("No Jobs are failed in last 30 minutes")
-        sys.exit(2)
-    elif len(rsdata) > 0:
+        sys.exit(0)
+    elif len(rs) > 0:
         critical = True
     if critical:
         print('<h4>PD Job Status</h4>')
@@ -48,6 +44,7 @@ try:
                 print('<td>' + str(val['status']) + '</td>')
                 print('</tr>')
         exit_status = 2
+
     sys.exit(exit_status)
 except Exception as error:
     print(error)

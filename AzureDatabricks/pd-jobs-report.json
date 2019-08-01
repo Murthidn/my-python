@@ -52,7 +52,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1564140867598,
+  "iteration": 1564640497231,
   "links": [],
   "panels": [
     {
@@ -126,6 +126,12 @@
               "key": "tenant",
               "operator": "=~",
               "value": "/^$tenant$/"
+            },
+            {
+              "condition": "AND",
+              "key": "jobname",
+              "operator": "=~",
+              "value": "/^$jobname$/"
             }
           ]
         }
@@ -356,5 +362,5 @@
   "timezone": "",
   "title": "PD Jobs",
   "uid": "EO-dVwNZz",
-  "version": 19
+  "version": 3
 }
