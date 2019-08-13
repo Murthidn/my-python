@@ -18,7 +18,7 @@ try:
     else:
         rsdata = list(rs.get_points())
     if len(rsdata) == 0:
-        print("WCF Communication from RDP is fine in last 5 minutes")
+        print("WCF Communication is fine for all Tenants in last 5 minutes!")
         sys.exit(2)
     elif len(rsdata) > 0:
         critical = True

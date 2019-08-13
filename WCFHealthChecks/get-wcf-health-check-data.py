@@ -1,7 +1,6 @@
 try:
     import sys
     import traceback
-    #import WCFHealthChecks.loadmodules
     import loadmodules
     import os
     import json
@@ -38,21 +37,14 @@ try:
     for item in rt.json()['response']['configObjects']:
         tenant = item['id']
         wcfurl = item['data']['jsonData']['services']['entityGovernService']['serviceSpecific']['workflow']['resturi']
-
-        print(wcfurl+'/WorkflowRestService.svc')
         status = 0
-
         try:
-            r = requests.get(wcfurl+'/WorkflowRestService.svc', timeout=10)
-            #print(r.status_code)
+            r = requests.get(wcfurl+'/WorkflowRestService.svc', timeout=60)
             if r.status_code != 200:
                 status=1
         except requests.ConnectionError:
-            #print("failed to connect")
             status=1
-
-        print(tenant)
-        print(status)
+        print(tenant,status)
 
         measurement = 'wcf_healthcheck_data'
         utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
