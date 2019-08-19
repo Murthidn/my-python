@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "get-wcf-health-check-data": {
+      "type": "metric",
+      "command": "python3.6 /etc/sensu/plugins/get-wcf-health-check-data.py",
+      "subscribers": [
+        "roundrobin:vm"
+      ],
+      "interval": 300,
+      "source": "proxyclient",
+      "handlers": [
+        "mailer",
+        "tester_mailer"
+      ]
+    },
+    "get-wcf-health-check-alert": {
+      "type": "metric",
+      "command": "python3.6 /etc/sensu/plugins/get-wcf-health-check-alert.py",
+      "subscribers": [
+        "roundrobin:vm"
+      ],
+      "interval": 420,
+      "source": "proxyclient",
+      "occurrences": 2,
+      "handlers": [
+        "mailer",
+        "tester_mailer"
+      ]
+    }
+  }
+}
