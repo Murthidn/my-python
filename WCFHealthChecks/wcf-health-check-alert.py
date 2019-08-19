@@ -28,12 +28,14 @@ try:
             print('<table class="tg">')
             print('<tr>')
             print('<th>#</th>')
+            print('<th>host</th>')
             print('<th>tenant</th>')
             print('</tr>')
             for val in v:
                 counter += 1
                 print('<tr>')
                 print('<td>' + str(counter) + '</td>')
+                print('<td>' + str(val['host']) + '</td>')
                 print('<td>' + str(val['tenant']) + '</td>')
                 print('</tr>')
         exit_status = 2

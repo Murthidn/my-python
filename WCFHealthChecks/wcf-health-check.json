@@ -4,9 +4,10 @@
       "type": "metric",
       "command": "python3.6 /etc/sensu/plugins/get-wcf-health-check-data.py",
       "subscribers": [
-        "storm","utility"
+        "roundrobin:vm"
       ],
       "interval": 300,
+      "source": "proxyclient",
       "handlers": [
         "mailer",
         "tester_mailer"

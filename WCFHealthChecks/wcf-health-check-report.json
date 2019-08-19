@@ -58,7 +58,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1565690637326,
+  "iteration": 1566210076512,
   "links": [],
   "panels": [
     {
@@ -141,15 +141,15 @@
           ],
           "tags": [
             {
-              "key": "tenant",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$tenant$/"
+              "value": "/^$host$/"
             }
           ]
         }
       ],
       "thresholds": "",
-      "title": "Most Recent Status for $tenant",
+      "title": "Most Recent Status for $host",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -216,9 +216,9 @@
           ],
           "tags": [
             {
-              "key": "tenant",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$tenant$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -312,7 +312,7 @@
             [
               {
                 "params": [
-                  "tenant_dummy"
+                  "tenant"
                 ],
                 "type": "field"
               },
@@ -340,9 +340,9 @@
           ],
           "tags": [
             {
-              "key": "tenant",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$tenant$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -363,11 +363,11 @@
         "datasource": "InfluxDB",
         "hide": 0,
         "includeAll": true,
-        "label": "Tenant",
+        "label": "Host",
         "multi": false,
-        "name": "tenant",
+        "name": "host",
         "options": [],
-        "query": "SHOW TAG VALUES FROM \"wcf_healthcheck_data\" WITH KEY = \"tenant\"",
+        "query": "SHOW TAG VALUES FROM \"wcf_healthcheck_data\" WITH KEY = \"host\"",
         "refresh": 1,
         "regex": "",
         "sort": 0,
@@ -380,7 +380,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -411,5 +411,5 @@
   "timezone": "",
   "title": "WCF Health Check",
   "uid": "APVAjSdWk",
-  "version": 13
+  "version": 11
 }

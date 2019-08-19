@@ -25,6 +25,8 @@ try:
 
     TIMEOUT = 60  # sec
     exit_status = 0
+    with open('/rootfs/etc/hostname', 'r') as hostnameinfo:
+        host_name = hostnameinfo.read().strip()
     user = 'system_user'
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain',
                'x-rdp-userId': 'system_user', 'x-rdp-userRoles': '["admin"]'}
@@ -39,7 +41,7 @@ try:
         wcfurl = item['data']['jsonData']['services']['entityGovernService']['serviceSpecific']['workflow']['resturi']
         status = 0
         try:
-            r = requests.get(wcfurl+'/WorkflowRestService.svc', timeout=60)
+            r = requests.get(wcfurl+'/WorkflowRestService.svc', timeout=15)
             if r.status_code != 200:
                 status=1
         except requests.ConnectionError:
@@ -51,11 +53,11 @@ try:
         json_body = [{
             "measurement": measurement,
             "tags": {
-                "tenant": tenant
+                "host": host_name
             },
             "time": utc_time,
             "fields": {
-                "tenant_dummy": tenant,
+                "tenant": tenant,
                 "status": status
             }
         }]
