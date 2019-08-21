@@ -58,7 +58,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1566210076512,
+  "iteration": 1566219907093,
   "links": [],
   "panels": [
     {
@@ -80,8 +80,8 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 8,
-        "w": 10,
+        "h": 7,
+        "w": 5,
         "x": 0,
         "y": 0
       },
@@ -141,15 +141,15 @@
           ],
           "tags": [
             {
-              "key": "host",
+              "key": "tenant",
               "operator": "=~",
-              "value": "/^$host$/"
+              "value": "/^$tenant$/"
             }
           ]
         }
       ],
       "thresholds": "",
-      "title": "Most Recent Status for $host",
+      "title": "Most Recent Status for $tenant",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -169,9 +169,9 @@
       "datasource": "InfluxDB",
       "fill": 1,
       "gridPos": {
-        "h": 8,
-        "w": 14,
-        "x": 10,
+        "h": 7,
+        "w": 19,
+        "x": 5,
         "y": 0
       },
       "id": 2,
@@ -190,7 +190,7 @@
       "nullPointMode": "null",
       "percentage": false,
       "pointradius": 5,
-      "points": false,
+      "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -212,13 +212,21 @@
                 ],
                 "type": "field"
               }
+            ],
+            [
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "field"
+              }
             ]
           ],
           "tags": [
             {
-              "key": "host",
+              "key": "tenant",
               "operator": "=~",
-              "value": "/^$host$/"
+              "value": "/^$tenant$/"
             }
           ]
         }
@@ -264,10 +272,10 @@
       "datasource": "InfluxDB",
       "fontSize": "100%",
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 7
       },
       "id": 4,
       "links": [],
@@ -293,7 +301,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "decimals": 2,
+          "decimals": null,
           "pattern": "/.*/",
           "thresholds": [],
           "type": "number",
@@ -312,7 +320,21 @@
             [
               {
                 "params": [
-                  "tenant"
+                  "host"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  "Host"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "tenant_dummy"
                 ],
                 "type": "field"
               },
@@ -340,9 +362,9 @@
           ],
           "tags": [
             {
-              "key": "host",
+              "key": "tenant",
               "operator": "=~",
-              "value": "/^$host$/"
+              "value": "/^$tenant$/"
             }
           ]
         }
@@ -363,11 +385,11 @@
         "datasource": "InfluxDB",
         "hide": 0,
         "includeAll": true,
-        "label": "Host",
+        "label": "Tenant",
         "multi": false,
-        "name": "host",
+        "name": "tenant",
         "options": [],
-        "query": "SHOW TAG VALUES FROM \"wcf_healthcheck_data\" WITH KEY = \"host\"",
+        "query": "SHOW TAG VALUES FROM \"wcf_healthcheck_data\" WITH KEY = \"tenant\"",
         "refresh": 1,
         "regex": "",
         "sort": 0,
@@ -380,7 +402,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
@@ -411,5 +433,5 @@
   "timezone": "",
   "title": "WCF Health Check",
   "uid": "APVAjSdWk",
-  "version": 11
+  "version": 23
 }

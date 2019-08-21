@@ -15,11 +15,11 @@ try:
         try:
             rt = requests.post(url, data=json.dumps(query), headers=headers, timeout=timeout)
         except requests.exceptions.Timeout:
-            print('<br>request timed out (', TIMEOUT, 'sec)')
-            sys.exit(201)
+            print('<br>request timed out while accesing rdp-rest:8085 (', TIMEOUT, 'sec)')
+            sys.exit(2)
         except requests.exceptions.RequestException as e:
             print('<br>exception encountered:', str(e))
-            sys.exit(201)
+            sys.exit(2)
         else:
             return rt
 
@@ -53,11 +53,11 @@ try:
         json_body = [{
             "measurement": measurement,
             "tags": {
-                "host": host_name
+                "tenant": tenant
             },
             "time": utc_time,
             "fields": {
-                "tenant": tenant,
+                "host": host_name,
                 "status": status
             }
         }]
