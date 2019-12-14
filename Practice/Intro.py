@@ -19,3 +19,8 @@ the one main reason that! we use concept called Byte code to achieve PORTABILITY
 
 Why Python is slow and others are fast?
 '''
+
+
+
+a=['a','a']
+print(a)
