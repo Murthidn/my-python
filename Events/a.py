@@ -16,25 +16,27 @@ except Exception as error:
     print(error)
     sys.exit(201)
 try:
-    imp_json_body=[]
-    utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+    exp_json_body=[]
+
+
+    utc_time = '2019-12-15T13:15:31Z'
     json_tmp = [{
-        "measurement": 'integration_import2',
+        "measurement": 'integration_export',
         "tags": {
             "tenant": 'rdwengg-az-dev2',
-            "profile": 'sys_import_data_json_ui_task_base-2',
-            "taskType": "ENTITY_IMPORT"
+            "profile": 'Acenda_Variant_Scheduled_Publi-2',
+            "taskType": "ENTITY_EXPORT"
         },
         "time": utc_time,
         "fields": {
 
-            "import": 10
+            "export": 10
         }
     }
     ]
-    imp_json_body.extend(json_tmp)
+    exp_json_body.extend(json_tmp)
 
-    uc.insert_to_influx(imp_json_body, 'app_metrics')
+    uc.insert_to_influx(exp_json_body, 'app_metrics')
 
 except Exception as error:
     print(error)

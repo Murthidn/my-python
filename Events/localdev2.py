@@ -70,8 +70,10 @@ try:
         return requestObjectResponse.json()['response']['totalRecords']
 
     TIMEOUT = 60 #sec
-    timeinterval = 5 #min
+    timeinterval = 60 #min
     tenants = []
+    exp_json_body=[]
+    imp_json_body=[]
     env = 'test' #os.environ['envname']
     imp_measurement = 'integration_import'
     exp_measurement = 'integration_export'
@@ -102,7 +104,34 @@ try:
                 totalManageEvents=getTotalManageEvents(importTaskSummary['taskId'], str(t))
                 totalGovernEvents=getTotalGovernEvents(importTaskSummary['taskId'], str(t))
                 totalRequestObjects=getTotalRequestObjects(importTaskSummary['taskId'], str(t))
-                print(importTaskSummary)
+
+                utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%f")
+                print(utc_time)
+                json_tmp = [{
+                    "measurement": imp_measurement,
+                    "tags": {
+                        "envname": env,
+                        "tenant": str(t),
+                        "profile": importTaskSummary['profileName'],
+                        "taskType": "ENTITY_IMPORT"
+                    },
+                    "time": utc_time,
+                    "fields": {
+                        "user": importTaskSummary['userId'],
+                        "taskId": importTaskSummary['taskId'],
+                        "import": importTaskSummary['totalRecordsSuccess'],
+                        "create": importTaskSummary['totalRecordsCreate'],
+                        "update": importTaskSummary['totalRecordsUpdate'],
+                        "delete": importTaskSummary['totalRecordsDelete'],
+                        "attempt": importTaskSummary['taskAttemptCount'],
+                        "externalEvents": totalExternalEvents,
+                        "manageEvents": totalManageEvents,
+                        "governEvents": totalGovernEvents,
+                        "requestObjects": totalRequestObjects
+                    }
+                }
+                ]
+                imp_json_body.extend(json_tmp)
 
         #Get Export Task Summary
         exportTaskSummaryQuery={ "params": { "query": { "filters": { "typesCriterion": [ "tasksummaryobject" ], "propertiesCriterion": [ { "createdDate": { "gt": str(utc_time_from), "type": "_DATETIME" } } ], "attributesCriterion": [ { "taskType": { "exact": "ENTITY_EXPORT" } }, { "status": { "exact": "Completed" } } ] } }, "fields": { "attributes": [ "profileName", "userId", "taskId", "totalRecordsSuccess", "totalRecordsCreate", "totalRecordsUpdate", "totalRecordsDelete","taskAttemptCount" ] } } }
@@ -112,8 +141,30 @@ try:
             for k in range(totalExportTaskSummary):
                 exportTaskSummary = getTaskSummary(exportTaskSummaryQueryResponse.json()['response']['requestObjects'][k]['data']['attributes'], 'export')
                 totalExternalEvents=getTotalExternalEvents(exportTaskSummary['taskId'], str(t))
-                print(exportTaskSummary)
 
+                utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%f")
+                print(utc_time)
+                json_tmp = [{
+                    "measurement": exp_measurement,
+                    "tags": {
+                        "envname": env,
+                        "tenant": str(t),
+                        "profile": exportTaskSummary['profileName'],
+                        "taskType": "ENTITY_EXPORT"
+                    },
+                    "time": utc_time,
+                    "fields": {
+                        "user": exportTaskSummary['userId'],
+                        "taskId": exportTaskSummary['taskId'],
+                        "export": exportTaskSummary['totalRecordsSuccess'],
+                        "attempt": exportTaskSummary['taskAttemptCount'],
+                        "externalEvents": totalExternalEvents
+                    }
+                }
+                ]
+                exp_json_body.extend(json_tmp)
+
+    print(exp_json_body)
 except Exception as error:
     print(error)
     traceback.print_exc()

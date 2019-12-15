@@ -70,14 +70,13 @@ try:
         return requestObjectResponse.json()['response']['totalRecords']
 
     TIMEOUT = 60 #sec
-    timeinterval = 200 #min
+    timeinterval = 60 #min
     tenants = []
     imp_json_body = []
     exp_json_body = []
     env = os.environ['envname']
     imp_measurement = 'integration_import'
     exp_measurement = 'integration_export'
-
     utc_time_from = (datetime.utcnow() - timedelta(minutes=int(timeinterval))).strftime("%Y-%m-%dT%H:%M:00.000-0000")
 
     #Get ALl Tenants
@@ -103,18 +102,18 @@ try:
                 totalGovernEvents=getTotalGovernEvents(importTaskSummary['taskId'], str(t))
                 totalRequestObjects=getTotalRequestObjects(importTaskSummary['taskId'], str(t))
 
-                utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+                utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%f")
                 json_tmp = [{
                     "measurement": imp_measurement,
                     "tags": {
                         "envname": env,
                         "tenant": str(t),
+                        "profile": importTaskSummary['profileName'],
                         "taskType": "ENTITY_IMPORT"
                     },
                     "time": utc_time,
                     "fields": {
                         "user": importTaskSummary['userId'],
-                        "profile": importTaskSummary['profileName'],
                         "taskId": importTaskSummary['taskId'],
                         "import": importTaskSummary['totalRecordsSuccess'],
                         "create": importTaskSummary['totalRecordsCreate'],
@@ -139,18 +138,18 @@ try:
                 exportTaskSummary = getTaskSummary(exportTaskSummaryQueryResponse.json()['response']['requestObjects'][k]['data']['attributes'], 'export')
                 totalExternalEvents=getTotalExternalEvents(exportTaskSummary['taskId'], str(t))
 
-                utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+                utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%f")
                 json_tmp = [{
                     "measurement": exp_measurement,
                     "tags": {
                         "envname": env,
                         "tenant": str(t),
+                        "profile": exportTaskSummary['profileName'],
                         "taskType": "ENTITY_EXPORT"
                     },
                     "time": utc_time,
                     "fields": {
                         "user": exportTaskSummary['userId'],
-                        "profile": exportTaskSummary['profileName'],
                         "taskId": exportTaskSummary['taskId'],
                         "export": exportTaskSummary['totalRecordsSuccess'],
                         "attempt": exportTaskSummary['taskAttemptCount'],
@@ -159,10 +158,9 @@ try:
                 }
                 ]
                 exp_json_body.extend(json_tmp)
-
     uc.insert_to_influx(imp_json_body, 'app_metrics')
     uc.insert_to_influx(exp_json_body, 'app_metrics')
-
+    
 except Exception as error:
     print(error)
     traceback.print_exc()
