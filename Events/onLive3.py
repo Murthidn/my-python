@@ -7,7 +7,7 @@ try:
     from datetime import datetime
     from datetime import timedelta
     import utilscommon as uc
-    #import loadmodules
+    import loadmodules
     import requests
     import time
     import traceback
@@ -46,25 +46,25 @@ try:
         return taskSummaryData
 
     def getTotalExternalEvents(taskId, tenant):
-        externalEventsUrl = ('http://manage.engg-az-dev2.riversand-dataplatform.com:8085/' + tenant + '/api/eventservice/get')
+        externalEventsUrl = ('http://rdp-rest:8085/' + tenant + '/api/eventservice/get')
         externalEventsQuery = { "params": { "query": { "filters": { "typesCriterion": [ "externalevent" ], "attributesCriterion": [ { "taskId": { "exact": taskId } } ] } }, "options": { "maxRecords": 1 } } }
         externalEventsResponse = requesthelper(externalEventsUrl, externalEventsQuery, headers, TIMEOUT)
         return externalEventsResponse.json()['response']['totalRecords']
 
     def getTotalManageEvents(taskId, tenant):
-        manageEventsUrl = ('http://manage.engg-az-dev2.riversand-dataplatform.com:8085/' + tenant + '/api/eventservice/get')
+        manageEventsUrl = ('http://rdp-rest:8085/' + tenant + '/api/eventservice/get')
         manageEventsQuery = { "params": { "query": { "filters": { "typesCriterion": [ "entitymanageevent" ], "attributesCriterion": [ { "taskId": { "exact": taskId } } ] } }, "options": { "maxRecords": 1 } } }
         manageEventsResponse = requesthelper(manageEventsUrl, manageEventsQuery, headers, TIMEOUT)
         return manageEventsResponse.json()['response']['totalRecords']
 
     def getTotalGovernEvents(taskId, tenant):
-        governEventsUrl = ('http://manage.engg-az-dev2.riversand-dataplatform.com:8085/' + tenant + '/api/eventservice/get')
+        governEventsUrl = ('http://rdp-rest:8085/' + tenant + '/api/eventservice/get')
         governEventsQuery = { "params": { "query": { "filters": { "typesCriterion": [ "entitygovernevent" ], "attributesCriterion": [ { "taskId": { "exact": taskId } } ] } }, "options": { "maxRecords": 1 } } }
         governEventsResponse = requesthelper(governEventsUrl, governEventsQuery, headers, TIMEOUT)
         return governEventsResponse.json()['response']['totalRecords']
 
     def getTotalRequestObjects(taskId, tenant):
-        requestObjectUrl = ('http://manage.engg-az-dev2.riversand-dataplatform.com:8085/' + tenant + '/api/requesttrackingservice/get')
+        requestObjectUrl = ('http://rdp-rest:8085/' + tenant + '/api/requesttrackingservice/get')
         requestObjectQuery = { "params": { "query": { "filters": { "typesCriterion": [ "requestobject" ], "attributesCriterion": [ { "taskId": { "exact": taskId } } ] } }, "options": { "maxRecords": 1 } } }
         requestObjectResponse = requesthelper(requestObjectUrl, requestObjectQuery, headers, TIMEOUT)
         return requestObjectResponse.json()['response']['totalRecords']
@@ -72,7 +72,9 @@ try:
     TIMEOUT = 60 #sec
     timeinterval = 200 #min
     tenants = []
-    env = 'test' #os.environ['envname']
+    imp_json_body = []
+    exp_json_body = []
+    env = os.environ['envname']
     imp_measurement = 'integration_import'
     exp_measurement = 'integration_export'
 
@@ -80,7 +82,7 @@ try:
 
     #Get ALl Tenants
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain', 'x-rdp-userId': 'system_user', 'x-rdp-userRoles': '["admin"]'}
-    tenantGetUrl = ('http://manage.engg-az-dev2.riversand-dataplatform.com:8085/dataplatform/api/configurationservice/get')
+    tenantGetUrl = ('http://rdp-rest:8085/dataplatform/api/configurationservice/get')
     tenantGetQuery = {'params': {'query': {'filters': {'typesCriterion': ['tenantserviceconfig']}}}}
     tenantGetResponse = requesthelper(tenantGetUrl, tenantGetQuery, headers, TIMEOUT)
 
@@ -88,10 +90,8 @@ try:
         tenants.append(item['id'])
 
     for t in tenants:
-        print(str(t))
-
         #Get Import Task Summary
-        taskSummaryUrl=('http://manage.engg-az-dev2.riversand-dataplatform.com:8085/'+ str(t) +'/api/requesttrackingservice/get')
+        taskSummaryUrl=('http://rdp-rest:8085/'+ str(t) +'/api/requesttrackingservice/get')
         importTaskSummaryQuery={ "params": { "query": { "filters": { "typesCriterion": [ "tasksummaryobject" ], "propertiesCriterion": [ { "createdDate": { "gt": str(utc_time_from), "type": "_DATETIME" } } ], "attributesCriterion": [ { "taskType": { "exact": "ENTITY_IMPORT" } }, { "status": { "exact": "Completed" } } ] } }, "fields": { "attributes": [ "profileName", "userId", "taskId", "totalRecordsSuccess", "totalRecordsCreate", "totalRecordsUpdate", "totalRecordsDelete", "taskAttemptCount" ] } } }
         importTaskSummaryQueryResponse = requesthelper(taskSummaryUrl, importTaskSummaryQuery, headers, TIMEOUT)
         if not importTaskSummaryQueryResponse.json()['response']['totalRecords']==0:
@@ -103,6 +103,33 @@ try:
                 totalGovernEvents=getTotalGovernEvents(importTaskSummary['taskId'], str(t))
                 totalRequestObjects=getTotalRequestObjects(importTaskSummary['taskId'], str(t))
 
+                utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+                json_tmp = [{
+                    "measurement": imp_measurement,
+                    "tags": {
+                        "envname": env,
+                        "tenant": str(t),
+                        "taskType": "ENTITY_IMPORT"
+                    },
+                    "time": utc_time,
+                    "fields": {
+                        "user": importTaskSummary['userId'],
+                        "profile": importTaskSummary['profileName'],
+                        "taskId": importTaskSummary['taskId'],
+                        "import": importTaskSummary['totalRecordsSuccess'],
+                        "create": importTaskSummary['totalRecordsCreate'],
+                        "update": importTaskSummary['totalRecordsUpdate'],
+                        "delete": importTaskSummary['totalRecordsDelete'],
+                        "attempt": importTaskSummary['taskAttemptCount'],
+                        "externalEvents": totalExternalEvents,
+                        "manageEvents": totalManageEvents,
+                        "governEvents": totalGovernEvents,
+                        "requestObjects": totalRequestObjects
+                    }
+                }
+                ]
+                imp_json_body.extend(json_tmp)
+
         #Get Export Task Summary
         exportTaskSummaryQuery={ "params": { "query": { "filters": { "typesCriterion": [ "tasksummaryobject" ], "propertiesCriterion": [ { "createdDate": { "gt": str(utc_time_from), "type": "_DATETIME" } } ], "attributesCriterion": [ { "taskType": { "exact": "ENTITY_EXPORT" } }, { "status": { "exact": "Completed" } } ] } }, "fields": { "attributes": [ "profileName", "userId", "taskId", "totalRecordsSuccess", "totalRecordsCreate", "totalRecordsUpdate", "totalRecordsDelete","taskAttemptCount" ] } } }
         exportTaskSummaryQueryResponse = requesthelper(taskSummaryUrl, exportTaskSummaryQuery, headers, TIMEOUT)
@@ -111,7 +138,30 @@ try:
             for k in range(totalExportTaskSummary):
                 exportTaskSummary = getTaskSummary(exportTaskSummaryQueryResponse.json()['response']['requestObjects'][k]['data']['attributes'], 'export')
                 totalExternalEvents=getTotalExternalEvents(exportTaskSummary['taskId'], str(t))
-                print(exportTaskSummary)
+
+                utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+                json_tmp = [{
+                    "measurement": exp_measurement,
+                    "tags": {
+                        "envname": env,
+                        "tenant": str(t),
+                        "taskType": "ENTITY_EXPORT"
+                    },
+                    "time": utc_time,
+                    "fields": {
+                        "user": exportTaskSummary['userId'],
+                        "profile": exportTaskSummary['profileName'],
+                        "taskId": exportTaskSummary['taskId'],
+                        "export": exportTaskSummary['totalRecordsSuccess'],
+                        "attempt": exportTaskSummary['taskAttemptCount'],
+                        "externalEvents": totalExternalEvents
+                    }
+                }
+                ]
+                exp_json_body.extend(json_tmp)
+
+    uc.insert_to_influx(imp_json_body, 'app_metrics')
+    uc.insert_to_influx(exp_json_body, 'app_metrics')
 
 except Exception as error:
     print(error)
