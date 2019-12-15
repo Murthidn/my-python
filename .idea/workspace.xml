@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61395920-6da1-4756-835f-0ac73914a79e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Events/Rough.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/Rough.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Events/a.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/a.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Events/localdev2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/localdev2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Events/onLive3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/onLive3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -377,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576410409433</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Update">
+      <created>1576419750090</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1576419750090</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -402,10 +405,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="560" y="72" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1576414886986" />
-    <state x="350" y="0" key="CommitChangelistDialog2" timestamp="1576410405793">
+    <state x="350" y="0" key="CommitChangelistDialog2" timestamp="1576419749028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="350" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576410405793" />
+    <state x="350" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576419749028" />
     <state width="1345" height="126" key="GridCell.Tab.0.bottom" timestamp="1576419483599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -438,10 +441,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="203" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576418696702" />
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1576410420994">
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1576419753527">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576410420994" />
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576419753527" />
     <state width="691" height="372" key="XDebugger.FullValuePopup" timestamp="1576327148451">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

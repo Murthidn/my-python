@@ -158,9 +158,10 @@ try:
                 }
                 ]
                 exp_json_body.extend(json_tmp)
+                
     uc.insert_to_influx(imp_json_body, 'app_metrics')
     uc.insert_to_influx(exp_json_body, 'app_metrics')
-    
+
 except Exception as error:
     print(error)
     traceback.print_exc()
