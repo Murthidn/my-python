@@ -70,7 +70,7 @@ try:
         return requestObjectResponse.json()['response']['totalRecords']
 
     TIMEOUT = 60 #sec
-    timeinterval = 200 #min
+    timeinterval = 5 #min
     tenants = []
     env = 'test' #os.environ['envname']
     imp_measurement = 'integration_import'
@@ -102,6 +102,7 @@ try:
                 totalManageEvents=getTotalManageEvents(importTaskSummary['taskId'], str(t))
                 totalGovernEvents=getTotalGovernEvents(importTaskSummary['taskId'], str(t))
                 totalRequestObjects=getTotalRequestObjects(importTaskSummary['taskId'], str(t))
+                print(importTaskSummary)
 
         #Get Export Task Summary
         exportTaskSummaryQuery={ "params": { "query": { "filters": { "typesCriterion": [ "tasksummaryobject" ], "propertiesCriterion": [ { "createdDate": { "gt": str(utc_time_from), "type": "_DATETIME" } } ], "attributesCriterion": [ { "taskType": { "exact": "ENTITY_EXPORT" } }, { "status": { "exact": "Completed" } } ] } }, "fields": { "attributes": [ "profileName", "userId", "taskId", "totalRecordsSuccess", "totalRecordsCreate", "totalRecordsUpdate", "totalRecordsDelete","taskAttemptCount" ] } } }
