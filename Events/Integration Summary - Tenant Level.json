@@ -1,0 +1,260 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 57,
+  "iteration": 1576499180288,
+  "links": [
+    {
+      "icon": "external link",
+      "tags": [
+        "Integration Summary - Per Task"
+      ],
+      "targetBlank": true,
+      "type": "dashboards"
+    }
+  ],
+  "panels": [
+    {
+      "columns": [],
+      "datasource": "APP_METRICS",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 15,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "options": {},
+      "pageSize": null,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "hidden"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "decimals": null,
+          "pattern": "/.*/",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "Tenant"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "Profile"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "Type"
+              ],
+              "type": "tag"
+            }
+          ],
+          "limit": "1",
+          "measurement": "integration_report",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "Count"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              },
+              {
+                "params": [
+                  "Total Count"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "Tenant",
+              "operator": "=~",
+              "value": "/^$tenant$/"
+            },
+            {
+              "condition": "AND",
+              "key": "Type",
+              "operator": "=",
+              "value": "ENTITY_IMPORT"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "Tenant"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "Profile"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "Type"
+              ],
+              "type": "tag"
+            }
+          ],
+          "limit": "1",
+          "measurement": "integration_report",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "Count"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "difference"
+              },
+              {
+                "params": [
+                  "Total Count"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "Tenant",
+              "operator": "=~",
+              "value": "/^$tenant$/"
+            },
+            {
+              "condition": "AND",
+              "key": "Type",
+              "operator": "=",
+              "value": "ENTITY_EXPORT"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Integration Summary - Tenant Level",
+      "transform": "table",
+      "type": "table"
+    }
+  ],
+  "schemaVersion": 19,
+  "style": "dark",
+  "tags": [
+    "Integration Report - Tenant"
+  ],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": "APP_METRICS",
+        "definition": "show tag values from integration_report with key = \"Tenant\"",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Tenant",
+        "multi": true,
+        "name": "tenant",
+        "options": [],
+        "query": "show tag values from integration_report with key = \"Tenant\"",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Integration Summary - Tenant Level",
+  "uid": "SQt0DSfWz",
+  "version": 30
+}

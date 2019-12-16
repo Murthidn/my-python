@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61395920-6da1-4756-835f-0ac73914a79e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Events/onLive3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/onLive3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Events/Integration Summary - POD Level.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Events/Integration Summary - Per Task.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Events/Integration Summary - Tenant Level.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Events/localdev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/Rough.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/a.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/checkTime.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/localDev.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/localdev2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/onLive.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/onLive2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/onLive2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/onLive3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/onLive1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/utilscommon.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +108,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="checkTime" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="localDev" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="my-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -107,7 +120,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Events/checkTime.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Events/localDev.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -128,7 +141,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Events/localdev2.py" />
+      <option name="SCRIPT_NAME" value="F:\Git\my-python\Events\localdev.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,7 +162,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Events/onLive3.py" />
+      <option name="SCRIPT_NAME" value="F:\Git\my-python\Events\onLive1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -161,17 +174,17 @@
     <list>
       <item itemvalue="Python.Rough" />
       <item itemvalue="Python.localdev2" />
-      <item itemvalue="Python.checkTime" />
       <item itemvalue="Python.a" />
       <item itemvalue="Python.onLive3" />
+      <item itemvalue="Python.localDev" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.localdev2" />
+        <item itemvalue="Python.localDev" />
+        <item itemvalue="Python.Rough" />
         <item itemvalue="Python.onLive3" />
         <item itemvalue="Python.a" />
-        <item itemvalue="Python.Rough" />
-        <item itemvalue="Python.checkTime" />
       </list>
     </recent_temporary>
   </component>
@@ -380,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576419750090</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Update">
+      <created>1576419975731</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1576419975731</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -405,46 +425,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="560" y="72" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1576414886986" />
-    <state x="350" y="0" key="CommitChangelistDialog2" timestamp="1576419749028">
+    <state x="350" y="0" key="CommitChangelistDialog2" timestamp="1576419974810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="350" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576419749028" />
-    <state width="1345" height="126" key="GridCell.Tab.0.bottom" timestamp="1576419483599">
+    <state x="350" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576419974810" />
+    <state width="1345" height="440" key="GridCell.Tab.0.bottom" timestamp="1576493682261">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="126" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576419483599" />
-    <state width="1345" height="126" key="GridCell.Tab.0.center" timestamp="1576419483599">
+    <state width="1345" height="440" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576493682261" />
+    <state width="1345" height="440" key="GridCell.Tab.0.center" timestamp="1576493682261">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="126" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576419483599" />
-    <state width="1345" height="126" key="GridCell.Tab.0.left" timestamp="1576419483599">
+    <state width="1345" height="440" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576493682261" />
+    <state width="1345" height="440" key="GridCell.Tab.0.left" timestamp="1576493682260">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="126" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576419483599" />
-    <state width="1345" height="126" key="GridCell.Tab.0.right" timestamp="1576419483599">
+    <state width="1345" height="440" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576493682260" />
+    <state width="1345" height="440" key="GridCell.Tab.0.right" timestamp="1576493682261">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="126" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576419483599" />
-    <state width="1345" height="203" key="GridCell.Tab.1.bottom" timestamp="1576418696702">
+    <state width="1345" height="440" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576493682261" />
+    <state width="1345" height="203" key="GridCell.Tab.1.bottom" timestamp="1576492624651">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576418696702" />
-    <state width="1345" height="203" key="GridCell.Tab.1.center" timestamp="1576418696702">
+    <state width="1345" height="203" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576492624651" />
+    <state width="1345" height="203" key="GridCell.Tab.1.center" timestamp="1576492624651">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576418696702" />
-    <state width="1345" height="203" key="GridCell.Tab.1.left" timestamp="1576418696701">
+    <state width="1345" height="203" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576492624651" />
+    <state width="1345" height="203" key="GridCell.Tab.1.left" timestamp="1576492624651">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576418696701" />
-    <state width="1345" height="203" key="GridCell.Tab.1.right" timestamp="1576418696702">
+    <state width="1345" height="203" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576492624651" />
+    <state width="1345" height="203" key="GridCell.Tab.1.right" timestamp="1576492624651">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576418696702" />
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1576419753527">
+    <state width="1345" height="203" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576492624651" />
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1576419981193">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576419753527" />
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576419981193" />
     <state width="691" height="372" key="XDebugger.FullValuePopup" timestamp="1576327148451">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -504,8 +524,8 @@
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Events/localdev2.py</url>
-          <line>107</line>
+          <url>file://$PROJECT_DIR$/Events/localdev.py</url>
+          <line>106</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
