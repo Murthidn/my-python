@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61395920-6da1-4756-835f-0ac73914a79e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Practice/Intro.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Events/Integration Summary - POD Level.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Events/Integration Summary - Per Task.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Events/Integration Summary - Tenant Level.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Events/localdev.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practice/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practice/a.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practice/b.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/Rough.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/a.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/checkTime.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/localDev.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/localdev2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/onLive.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/onLive2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/onLive2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/onLive3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/onLive1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/utilscommon.py" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,54 +29,25 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>hostname</find>
-      <find>api_call</find>
-      <find>TIMEOUT</find>
-      <find>requests</find>
-      <find>callApi</find>
-      <find>DOMAIN</find>
-      <find>HEADERS</find>
-      <find>envName</find>
-      <find>HOME</find>
-      <find>dst</find>
-      <find>location</find>
-      <find>second_run</find>
-      <find>result_state</find>
-      <find>LOCATION</find>
-      <find>SUBSCRIPTION</find>
-      <find>job_life</find>
-      <find>job</find>
-      <find>hasmo</find>
-      <find>jira</find>
-      <find>possible_alert_name</find>
-      <find>exit_status</find>
-      <find>args</find>
-      <find>No data found.</find>
-      <find>final_lag</find>
-      <find>requesthelper</find>
-      <find>tenantrdpversion</find>
-      <find>time</find>
-      <find>re</find>
-      <find>tenants</find>
-      <find>loadmodules</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1R2XilTnK3SBjYagin3jSjVBH83" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../devops/Raihan/dataplatform-devops/violet/Docker/Swarm/56-sensu/configs/client-confs/plugins" />
     <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -81,23 +60,33 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Git\my-python\Practice\if-else" />
       <recent name="F:\Git\my-python\Others" />
       <recent name="F:\Git\my-python\AzureDatabricks" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.tmp">
+  <component name="RunManager" selected="Python.localdev2">
+    <configuration name="Rough" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="my-python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Events" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Events/Rough.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="a" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="my-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,11 +95,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Practice" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Events" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\Git\my-python\Practice\Intro.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Events/a.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -119,7 +108,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="b" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="localDev" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="my-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -127,11 +116,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Practice" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Events" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Practice/b.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Events/localDev.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,7 +129,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="list" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="localdev2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="my-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -148,11 +137,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Practice" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Events" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\Git\my-python\Practice\Intro.py" />
+      <option name="SCRIPT_NAME" value="F:\Git\my-python\Events\localdev.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -161,7 +150,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="onLive3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="my-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -169,32 +158,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Practice" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Events" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\Git\my-python\Practice\tmp.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tmp" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="my-python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Practice" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Practice/tmp.py" />
+      <option name="SCRIPT_NAME" value="F:\Git\my-python\Events\onLive1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -204,21 +172,33 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.Rough" />
+      <item itemvalue="Python.localdev2" />
       <item itemvalue="Python.a" />
-      <item itemvalue="Python.b" />
-      <item itemvalue="Python.list" />
-      <item itemvalue="Python.test (1)" />
-      <item itemvalue="Python.tmp" />
+      <item itemvalue="Python.onLive3" />
+      <item itemvalue="Python.localDev" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tmp" />
-        <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.list" />
-        <item itemvalue="Python.b" />
+        <item itemvalue="Python.localdev2" />
+        <item itemvalue="Python.localDev" />
+        <item itemvalue="Python.Rough" />
+        <item itemvalue="Python.onLive3" />
         <item itemvalue="Python.a" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -385,7 +365,42 @@
       <option name="project" value="LOCAL" />
       <updated>1566386869947</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Update">
+      <created>1576337506387</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1576337506387</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Update">
+      <created>1576402128505</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1576402128505</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Update">
+      <created>1576410409433</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1576410409433</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Update">
+      <created>1576419750090</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1576419750090</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Update">
+      <created>1576419975731</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1576419975731</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -393,7 +408,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -402,6 +419,56 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update" />
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="560" y="72" key="#xdebugger.evaluate" timestamp="1576414886986">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="560" y="72" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1576414886986" />
+    <state x="350" y="0" key="CommitChangelistDialog2" timestamp="1576419974810">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="350" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576419974810" />
+    <state width="1345" height="440" key="GridCell.Tab.0.bottom" timestamp="1576493682261">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="440" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576493682261" />
+    <state width="1345" height="440" key="GridCell.Tab.0.center" timestamp="1576493682261">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="440" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576493682261" />
+    <state width="1345" height="440" key="GridCell.Tab.0.left" timestamp="1576493682260">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="440" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576493682260" />
+    <state width="1345" height="440" key="GridCell.Tab.0.right" timestamp="1576493682261">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="440" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576493682261" />
+    <state width="1345" height="203" key="GridCell.Tab.1.bottom" timestamp="1576492624651">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="203" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576492624651" />
+    <state width="1345" height="203" key="GridCell.Tab.1.center" timestamp="1576492624651">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="203" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576492624651" />
+    <state width="1345" height="203" key="GridCell.Tab.1.left" timestamp="1576492624651">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="203" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576492624651" />
+    <state width="1345" height="203" key="GridCell.Tab.1.right" timestamp="1576492624651">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="203" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576492624651" />
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1576419981193">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576419981193" />
+    <state width="691" height="372" key="XDebugger.FullValuePopup" timestamp="1576327148451">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="691" height="372" key="XDebugger.FullValuePopup/0.0.1366.728@0.0.1366.728" timestamp="1576327148451" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -436,26 +503,32 @@
           <line>1</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Practice/if-else/if-else-1.py</url>
+          <line>3</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AzureDatabricks/get-pd-data.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AzureDatabricks/helper.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WCFHealthChecks/get-wcf-health-check-data.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Events/localdev.py</url>
+          <line>106</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>job_runs</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>jobs</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>run_response</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
 </project>
