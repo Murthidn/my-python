@@ -54,7 +54,7 @@ try:
     tenants = []
     json_body = []
     env = os.environ['envname']
-    measurement = 'integration_report2'
+    measurement = 'integration_report'
     utc_time_from = (datetime.utcnow() - timedelta(minutes=int(timeinterval))).strftime("%Y-%m-%dT%H:%M:00.000-0000")
 
     # Get ALl Tenants
