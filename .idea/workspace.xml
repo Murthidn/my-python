@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61395920-6da1-4756-835f-0ac73914a79e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Events/localDev2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Elastic/ESCall.py" beforeDir="false" afterPath="$PROJECT_DIR$/Elastic/ESCall.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/localdev.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/localdev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/onLive2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/onLive2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +55,8 @@
       <recent name="F:\Git\my-python\AzureDatabricks" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.localdev2">
-    <configuration name="Rough" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.a (1)">
+    <configuration name="a (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="my-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -62,11 +64,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Events" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Practice" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Events/Rough.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Practice/a.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -117,7 +119,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="localdev2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="localDev2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="my-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -129,7 +131,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\Git\my-python\Events\localdev.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Events/localDev2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,19 +162,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Rough" />
       <item itemvalue="Python.a" />
       <item itemvalue="Python.localDev" />
-      <item itemvalue="Python.localdev2" />
       <item itemvalue="Python.onLive3" />
+      <item itemvalue="Python.localDev2" />
+      <item itemvalue="Python.a (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.a (1)" />
+        <item itemvalue="Python.localDev2" />
         <item itemvalue="Python.localDev" />
         <item itemvalue="Python.onLive3" />
         <item itemvalue="Python.a" />
-        <item itemvalue="Python.localdev2" />
-        <item itemvalue="Python.Rough" />
       </list>
     </recent_temporary>
   </component>
@@ -402,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576593418345</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Update">
+      <created>1576650897931</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1576650897931</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -423,54 +432,54 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="560" y="72" key="#xdebugger.evaluate" timestamp="1576414886986">
+    <state x="560" y="72" key="#xdebugger.evaluate" timestamp="1576666788634">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="560" y="72" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1576414886986" />
-    <state x="350" y="0" key="CommitChangelistDialog2" timestamp="1576593415680">
+    <state x="560" y="72" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1576666788634" />
+    <state x="350" y="0" key="CommitChangelistDialog2" timestamp="1576650896065">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="350" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576593415680" />
+    <state x="350" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576650896065" />
     <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1576593187909">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576593187909" />
-    <state width="1345" height="203" key="GridCell.Tab.0.bottom" timestamp="1576499919674">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1576674736810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576499919674" />
-    <state width="1345" height="203" key="GridCell.Tab.0.center" timestamp="1576499919674">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576674736810" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1576674736810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576499919674" />
-    <state width="1345" height="203" key="GridCell.Tab.0.left" timestamp="1576499919673">
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576674736810" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1576674736810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576499919673" />
-    <state width="1345" height="203" key="GridCell.Tab.0.right" timestamp="1576499919674">
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576674736810" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1576674736810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576499919674" />
-    <state width="1345" height="203" key="GridCell.Tab.1.bottom" timestamp="1576499919675">
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576674736810" />
+    <state width="1345" height="311" key="GridCell.Tab.1.bottom" timestamp="1576669375396">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576499919675" />
-    <state width="1345" height="203" key="GridCell.Tab.1.center" timestamp="1576499919675">
+    <state width="1345" height="311" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576669375396" />
+    <state width="1345" height="311" key="GridCell.Tab.1.center" timestamp="1576669375396">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576499919675" />
-    <state width="1345" height="203" key="GridCell.Tab.1.left" timestamp="1576499919674">
+    <state width="1345" height="311" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576669375396" />
+    <state width="1345" height="311" key="GridCell.Tab.1.left" timestamp="1576669375395">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576499919674" />
-    <state width="1345" height="203" key="GridCell.Tab.1.right" timestamp="1576499919675">
+    <state width="1345" height="311" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576669375395" />
+    <state width="1345" height="311" key="GridCell.Tab.1.right" timestamp="1576669375396">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="203" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576499919675" />
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1576593450385">
+    <state width="1345" height="311" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576669375396" />
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1576650902128">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576593450385" />
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576650902128" />
     <state width="691" height="372" key="XDebugger.FullValuePopup" timestamp="1576327148451">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -528,11 +537,6 @@
           <url>file://$PROJECT_DIR$/WCFHealthChecks/get-wcf-health-check-data.py</url>
           <line>8</line>
           <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Events/localdev.py</url>
-          <line>106</line>
-          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
