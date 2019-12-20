@@ -6,7 +6,7 @@ try:
     import re
     from datetime import datetime
     from datetime import timedelta
-    import utilscommon as uc
+    #import utilscommon as uc
     #import loadmodules
     import requests
     import time
@@ -48,13 +48,6 @@ try:
         governEventsResponse = requesthelper(governEventsUrl, governEventsQuery, headers, TIMEOUT)
         return governEventsResponse.json()['response']['totalRecords']
 
-
-    def getTotalRequestObjects(taskId, tenant):
-        requestObjectUrl = ('http://manage.engg-az-dev2.riversand-dataplatform.com:8085/' + tenant + '/api/requesttrackingservice/get')
-        requestObjectQuery = {"params": {"query": { "filters": {"typesCriterion": ["requestobject"], "attributesCriterion": [{"taskId": {"exact": taskId}}]}}, "options": {"maxRecords": 1}}}
-        requestObjectResponse = requesthelper(requestObjectUrl, requestObjectQuery, headers, TIMEOUT)
-        return requestObjectResponse.json()['response']['totalRecords']
-
     #Start Point
     TIMEOUT = 60  # sec
     timeinterval = 60  # min
@@ -73,7 +66,7 @@ try:
     for item in tenantGetResponse.json()['response']['configObjects']:
         tenants.append(item['id'])
 
-    taskSummaryQuery = { "params": { "query": { "filters": { "typesCriterion": [ "tasksummaryobject" ], "propertiesCriterion": [ { "createdDate": { "gt": str(utc_time_from), "type": "_DATETIME" } } ], "attributesCriterion": [ { "taskType": { "exacts": [ "ENTITY_IMPORT", "ENTITY_EXPORT" ] } }, { "status": { "exact": "Processing", "not": "true" } } ] } }, "fields": { "attributes": [ "_ALL" ] } } }
+    taskSummaryQuery = { "params": { "query": { "filters": { "typesCriterion": [ "tasksummaryobject" ], "propertiesCriterion": [ { "createdDate": { "gt": str(utc_time_from), "type": "_DATETIME" } } ], "attributesCriterion": [ { "status": { "exact": "Processing", "not": "true" } }, { "taskId": { "hasvalue": "true", "type": "_STRING" } }, { "taskType": { "hasvalue": "true", "type": "_STRING" } } ] } }, "fields": { "attributes": [ "_ALL" ] } } }
 
     for t in tenants:
         taskSummaryUrl = ('http://manage.engg-az-dev2.riversand-dataplatform.com:8085/' + str(t) + '/api/requesttrackingservice/get')
@@ -83,36 +76,18 @@ try:
             for i in range(totalTaskSummary):
                 taskSummaryData = {}
                 taskSummaryObj = taskSummaryAPIResponse.json()['response']['requestObjects'][i]['data']['attributes']
-                taskSummaryData['taskAttemptCount'] = 0
-                taskSummaryData['userId'] = taskSummaryObj['userId']['values'][0]['value']
-                taskSummaryData['profileName'] = taskSummaryObj['profileName']['values'][0]['value']
+
+                if 'profileName' not in taskSummaryObj:
+                    taskSummaryData['profileName'] = 'Not_Applicable_Profile'
+                else:
+                    taskSummaryData['profileName'] = taskSummaryObj['profileName']['values'][0]['value']
                 taskSummaryData['taskId'] = taskSummaryObj['taskId']['values'][0]['value']
                 taskSummaryData['taskType'] = taskSummaryObj['taskType']['values'][0]['value']
-                taskSummaryData['status'] = taskSummaryObj['status']['values'][0]['value']
                 taskSummaryData['totalRecords'] = taskSummaryObj['totalRecords']['values'][0]['value']
-                taskSummaryData['totalLoadError'] = taskSummaryObj['totalLoadError']['values'][0]['value']
-                taskSummaryData['totalRDPErrors'] = taskSummaryObj['totalRDPErrors']['values'][0]['value']
-                taskSummaryData['totalExtractError'] = taskSummaryObj['totalExtractError']['values'][0]['value']
-                taskSummaryData['totalRecordsSuccess'] = taskSummaryObj['totalRecordsSuccess']['values'][0]['value']
-                taskSummaryData['totalRecordsProcessed'] = taskSummaryObj['totalRecordsProcessed']['values'][0]['value']
-                taskSummaryData['totalRecordsCreate'] = taskSummaryObj['totalRecordsCreate']['values'][0]['value']
-                taskSummaryData['totalRecordsUpdate'] = taskSummaryObj['totalRecordsUpdate']['values'][0]['value']
-                taskSummaryData['totalRecordsDelete'] = taskSummaryObj['totalRecordsDelete']['values'][0]['value']
-                taskSummaryData['totalRecordsNoChange'] = taskSummaryObj['totalRecordsNoChange']['values'][0]['value']
-                if 'taskAttemptCount' in taskSummaryObj:
-                    taskSummaryData['taskAttemptCount'] = taskSummaryObj['taskAttemptCount']['values'][0]['value']
 
                 totalExternalEvents = getTotalExternalEvents(taskSummaryObj['taskId']['values'][0]['value'], str(t))
-
-                if taskSummaryData['taskType'] == 'ENTITY_IMPORT':
-                    totalManageEvents = getTotalManageEvents(taskSummaryObj['taskId']['values'][0]['value'], str(t))
-                    totalGovernEvents = getTotalGovernEvents(taskSummaryObj['taskId']['values'][0]['value'], str(t))
-                    totalRequestObjects = getTotalRequestObjects(taskSummaryObj['taskId']['values'][0]['value'], str(t))
-
-                else:
-                    totalManageEvents = 0
-                    totalGovernEvents = 0
-                    totalRequestObjects = 0
+                totalManageEvents = getTotalManageEvents(taskSummaryObj['taskId']['values'][0]['value'], str(t))
+                totalGovernEvents = getTotalGovernEvents(taskSummaryObj['taskId']['values'][0]['value'], str(t))
 
                 utc_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%f")
                 json_tmp = [{
@@ -125,33 +100,19 @@ try:
                     },
                     "time": utc_time,
                     "fields": {
-                        "User": taskSummaryData['userId'],
                         "TaskId": taskSummaryData['taskId'],
-                        "Status": taskSummaryData['status'],
-                        "Import": taskSummaryData['totalRecords'],
-                        "LoadError": taskSummaryData['totalLoadError'],
-                        "RDPErrors": taskSummaryData['totalRDPErrors'],
-                        "ExtractError": taskSummaryData['totalExtractError'],
-                        "Attempt": taskSummaryData['taskAttemptCount'],
-                        "Success": taskSummaryData['totalRecordsSuccess'],
-                        "Processed": taskSummaryData['totalRecordsProcessed'],
-                        "Create": taskSummaryData['totalRecordsCreate'],
-                        "Update": taskSummaryData['totalRecordsUpdate'],
-                        "Delete": taskSummaryData['totalRecordsDelete'],
-                        "NoChange": taskSummaryData['totalRecordsNoChange'],
+                        "Count": taskSummaryData['totalRecords'],
                         "ExternalEvents": totalExternalEvents,
                         "ManageEvents": totalManageEvents,
-                        "GovernEvents": totalGovernEvents,
-                        "RequestObjects": totalRequestObjects
+                        "GovernEvents": totalGovernEvents
                     }
                 }
                 ]
                 json_body.extend(json_tmp)
-                print(json_tmp)
-                print('------')
-                #time.sleep(3)
-        #time.sleep(5)
+                time.sleep(3)
+        time.sleep(5)
     #uc.insert_to_influx(json_body, 'app_metrics')
+    print(json_body)
 
 except Exception as error:
     print(error)
