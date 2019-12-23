@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 57,
-  "iteration": 1576499180288,
+  "id": 58,
+  "iteration": 1576758613115,
   "links": [
     {
       "icon": "external link",
@@ -33,7 +33,7 @@
       "datasource": "APP_METRICS",
       "fontSize": "100%",
       "gridPos": {
-        "h": 15,
+        "h": 14,
         "w": 24,
         "x": 0,
         "y": 0
@@ -65,7 +65,7 @@
           "pattern": "/.*/",
           "thresholds": [],
           "type": "number",
-          "unit": "short"
+          "unit": "none"
         }
       ],
       "targets": [
@@ -73,13 +73,13 @@
           "groupBy": [
             {
               "params": [
-                "Tenant"
+                "Profile"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "Profile"
+                "Tenant"
               ],
               "type": "tag"
             },
@@ -90,7 +90,7 @@
               "type": "tag"
             }
           ],
-          "limit": "1",
+          "limit": "",
           "measurement": "integration_report",
           "orderByTime": "ASC",
           "policy": "default",
@@ -100,64 +100,21 @@
             [
               {
                 "params": [
-                  "Count"
+                  "TaskId"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "non_negative_difference"
+                "type": "count"
               },
               {
                 "params": [
-                  "Total Count"
+                  "Total Tasks"
                 ],
                 "type": "alias"
               }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "Tenant",
-              "operator": "=~",
-              "value": "/^$tenant$/"
-            },
-            {
-              "condition": "AND",
-              "key": "Type",
-              "operator": "=",
-              "value": "ENTITY_IMPORT"
-            }
-          ]
-        },
-        {
-          "groupBy": [
-            {
-              "params": [
-                "Tenant"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "Profile"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "Type"
-              ],
-              "type": "tag"
-            }
-          ],
-          "limit": "1",
-          "measurement": "integration_report",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "table",
-          "select": [
+            ],
             [
               {
                 "params": [
@@ -167,11 +124,65 @@
               },
               {
                 "params": [],
-                "type": "difference"
+                "type": "sum"
               },
               {
                 "params": [
-                  "Total Count"
+                  "Total Records"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "ExternalEvents"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [
+                  "External Events"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "ManageEvents"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [
+                  "Manage Events"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "GovernEvents"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [
+                  "Govern Events"
                 ],
                 "type": "alias"
               }
@@ -186,8 +197,8 @@
             {
               "condition": "AND",
               "key": "Type",
-              "operator": "=",
-              "value": "ENTITY_EXPORT"
+              "operator": "=~",
+              "value": "/^$type$/"
             }
           ]
         }
@@ -232,11 +243,38 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": "APP_METRICS",
+        "definition": "show tag values from integration_report with key = \"Type\"",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Type",
+        "multi": true,
+        "name": "type",
+        "options": [],
+        "query": "show tag values from integration_report with key = \"Type\"",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
       }
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -256,5 +294,5 @@
   "timezone": "",
   "title": "Integration Summary - Tenant Level",
   "uid": "SQt0DSfWz",
-  "version": 30
+  "version": 3
 }

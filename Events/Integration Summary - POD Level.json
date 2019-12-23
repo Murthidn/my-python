@@ -15,7 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 58,
+  "id": 59,
+  "iteration": 1576758402574,
   "links": [
     {
       "asDropdown": false,
@@ -34,8 +35,8 @@
       "datasource": "APP_METRICS",
       "fontSize": "100%",
       "gridPos": {
-        "h": 5,
-        "w": 8,
+        "h": 15,
+        "w": 24,
         "x": 0,
         "y": 0
       },
@@ -66,7 +67,7 @@
           "pattern": "/.*/",
           "thresholds": [],
           "type": "number",
-          "unit": "short"
+          "unit": "none"
         }
       ],
       "targets": [
@@ -88,17 +89,17 @@
             [
               {
                 "params": [
-                  "Count"
+                  "TaskId"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "sum"
+                "type": "count"
               },
               {
                 "params": [
-                  "Total Count"
+                  "Total Tasks"
                 ],
                 "type": "alias"
               }
@@ -107,50 +108,8 @@
           "tags": [
             {
               "key": "Type",
-              "operator": "=",
-              "value": "ENTITY_IMPORT"
-            }
-          ]
-        },
-        {
-          "groupBy": [
-            {
-              "params": [
-                "Type"
-              ],
-              "type": "tag"
-            }
-          ],
-          "measurement": "integration_report",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "table",
-          "select": [
-            [
-              {
-                "params": [
-                  "Count"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              },
-              {
-                "params": [
-                  "Total Count"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "Type",
-              "operator": "=",
-              "value": "ENTITY_EXPORT"
+              "operator": "=~",
+              "value": "/^$type$/"
             }
           ]
         }
@@ -166,10 +125,38 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": "APP_METRICS",
+        "definition": "show tag values from integration_report with key = \"Type\"",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Type",
+        "multi": true,
+        "name": "type",
+        "options": [],
+        "query": "show tag values from integration_report with key = \"Type\"",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -189,5 +176,5 @@
   "timezone": "",
   "title": "Integration Summary - POD Level",
   "uid": "C_cI8IfWz",
-  "version": 13
+  "version": 4
 }
