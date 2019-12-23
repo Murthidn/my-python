@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61395920-6da1-4756-835f-0ac73914a79e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Events/Dev.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Events/localdev.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/Live2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Events/onLive2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Events/Live1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Events/Integration Summary - Per Task.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,19 +160,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.Dev" />
+      <item itemvalue="Python.a (1)" />
+      <item itemvalue="Python.localDev2" />
       <item itemvalue="Python.localDev" />
       <item itemvalue="Python.onLive3" />
-      <item itemvalue="Python.localDev2" />
-      <item itemvalue="Python.a (1)" />
-      <item itemvalue="Python.Dev" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Dev" />
         <item itemvalue="Python.a (1)" />
         <item itemvalue="Python.localDev2" />
-        <item itemvalue="Python.localDev" />
         <item itemvalue="Python.onLive3" />
+        <item itemvalue="Python.localDev" />
       </list>
     </recent_temporary>
   </component>
