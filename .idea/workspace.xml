@@ -34,8 +34,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/dataplatform-devops" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -444,6 +445,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="362" y="189" width="682" height="397" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577518160375">
+      <screen x="51" y="0" width="1315" height="768" />
+    </state>
+    <state x="362" y="189" width="682" height="397" key="#com.intellij.fileTypes.FileTypeChooser/51.0.1315.768@51.0.1315.768" timestamp="1577518160375" />
     <state x="560" y="72" key="#xdebugger.evaluate" timestamp="1576750331913">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
