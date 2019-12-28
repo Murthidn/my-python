@@ -1,0 +1,14 @@
+# Single Line Comment
+
+""" Multi Line
+Comment
+With 3 Double Quotes
+"""
+
+# or 3 Single Quotes
+
+''' Multi Line
+Comment
+With 3 Single Quotes
+'''
+

@@ -1,0 +1,31 @@
+Main Concepts in Python
+    * Data Types
+    * Type Conversion
+    * Operators
+    * Flow Control
+    * Looping
+    * Input/Output Functions
+    * Function
+        Lambdas/Decorators/Generators
+    * Classes/Object
+        Inheritance/Abstraction/Polymorphism/Encapsulation
+        Python is Very Powerful as it's both Functional and Object(classes) oriented language
+    * Exception Handling
+    * Files
+    * Regular Expressions
+    * Multi Threading
+        Key to develop enterprise applications
+        3 Different ways to create MT in Python
+
+What is Python?
+    * It's an Interpreted (very quick, co compilation step), Function and Object Oriented Programming language
+    * Easy to learn and simple syntax
+    * We can develop software rapidly as it has inbuilt Libraries/Modules
+
+Why Python?
+    * Easy to Learn and Use
+    * Performance - Super Speed as it has no compilation step
+    * Rapid Development - Python has inbuilt modules/libraries, no need to code a lot, so quick development
+    * Dynamically Typed - Decides Dynamically what type of data that variable has
+    * Community - Python has huge community/support
+    * Third Party Libraries - Python can be easily integrated with any Third Party Libraries ex: CherryPy, Boto
