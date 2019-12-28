@@ -1,0 +1,20 @@
+In Python Data Types are organized mainly in 5 Types
+1) None Type - Doesn't contain any value ex: x = None
+2) Numeric Types - int, float, complex, binary, hexa decimal, octal, boolean
+    Here we just hold single value, but when in real time applications we need to hold multiple or sequence values @ a time, So Sequences!
+3) Sequences - Sequence of other data types
+    String, Bytes, Byte Array, List, Tuple, Range
+    To hold multiple values on real time application which may come from Database, APIs or some sources!
+    So we'll use "Inbuilt Collections or Data Structures - List, Set, Dictionary"
+
+    * List
+        Can store any number of values or objects dynamically
+    * Set
+        Can store any number of values but doesn't allows duplicates
+    * Dictionary
+        Is a Map, stores in Key & Value pair
+
+4) Set - Doesn't allow duplicates
+5) Mappings - Map & Reduce
+
+=============================================================================================

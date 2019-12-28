@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61395920-6da1-4756-835f-0ac73914a79e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Notes/Basic/1-Hello.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notes/Basic/2-Comments" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notes/Basic/3-DataTypes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notes/Basic/4-NumericTypes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notes/Basic/5-Strings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/Basic/0-Python-Introduction" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Basic/0-Python-Introduction" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,7 @@
       <recent name="F:\Git\my-python\AzureDatabricks" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.1-Hello">
+  <component name="RunManager" selected="Python.5-Strings">
     <configuration name="1-Hello" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="my-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -72,6 +72,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Notes/Basic/1-Hello.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="4-NumericTypes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="my-python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Notes/Basic" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Notes/Basic/4-NumericTypes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="5-Strings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="my-python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Notes/Basic" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Notes/Basic/5-Strings.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -122,62 +164,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="localDev2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="my-python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Events" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Events/localDev2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="onLive3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="my-python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Events" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\Git\my-python\Events\onLive1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.Dev" />
       <item itemvalue="Python.a (1)" />
-      <item itemvalue="Python.localDev2" />
-      <item itemvalue="Python.onLive3" />
       <item itemvalue="Python.1-Hello" />
+      <item itemvalue="Python.4-NumericTypes" />
+      <item itemvalue="Python.5-Strings" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.5-Strings" />
+        <item itemvalue="Python.4-NumericTypes" />
         <item itemvalue="Python.1-Hello" />
         <item itemvalue="Python.Dev" />
         <item itemvalue="Python.a (1)" />
-        <item itemvalue="Python.localDev2" />
-        <item itemvalue="Python.onLive3" />
       </list>
     </recent_temporary>
   </component>
@@ -435,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577518201956</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Update">
+      <created>1577520931071</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1577520931071</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -456,39 +463,43 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="362" y="189" width="682" height="397" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577520179009">
+    <state x="362" y="189" width="682" height="397" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577521551999">
       <screen x="51" y="0" width="1315" height="768" />
     </state>
-    <state x="362" y="189" width="682" height="397" key="#com.intellij.fileTypes.FileTypeChooser/51.0.1315.768@51.0.1315.768" timestamp="1577520179009" />
+    <state x="362" y="189" width="682" height="397" key="#com.intellij.fileTypes.FileTypeChooser/51.0.1315.768@51.0.1315.768" timestamp="1577521551999" />
     <state x="560" y="72" key="#xdebugger.evaluate" timestamp="1576750331913">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="560" y="72" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1576750331913" />
-    <state x="388" y="0" width="777" height="768" key="CommitChangelistDialog2" timestamp="1577518201817">
+    <state x="388" y="0" width="777" height="768" key="CommitChangelistDialog2" timestamp="1577520930991">
       <screen x="51" y="0" width="1315" height="768" />
     </state>
     <state x="350" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576678022493" />
-    <state x="388" y="0" width="777" height="768" key="CommitChangelistDialog2/51.0.1315.768@51.0.1315.768" timestamp="1577518201817" />
+    <state x="388" y="0" width="777" height="768" key="CommitChangelistDialog2/51.0.1315.768@51.0.1315.768" timestamp="1577520930991" />
     <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1576593187909">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576593187909" />
-    <state width="1345" height="311" key="GridCell.Tab.0.bottom" timestamp="1576750337721">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1292" height="249" key="GridCell.Tab.0.bottom" timestamp="1577547146034">
+      <screen x="51" y="0" width="1315" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576750337721" />
-    <state width="1345" height="311" key="GridCell.Tab.0.center" timestamp="1576750337721">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1292" height="249" key="GridCell.Tab.0.bottom/51.0.1315.768@51.0.1315.768" timestamp="1577547146034" />
+    <state width="1292" height="249" key="GridCell.Tab.0.center" timestamp="1577547146030">
+      <screen x="51" y="0" width="1315" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576750337721" />
-    <state width="1345" height="311" key="GridCell.Tab.0.left" timestamp="1576750337721">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1292" height="249" key="GridCell.Tab.0.center/51.0.1315.768@51.0.1315.768" timestamp="1577547146030" />
+    <state width="1292" height="249" key="GridCell.Tab.0.left" timestamp="1577547146029">
+      <screen x="51" y="0" width="1315" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576750337721" />
-    <state width="1345" height="311" key="GridCell.Tab.0.right" timestamp="1576750337721">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1292" height="249" key="GridCell.Tab.0.left/51.0.1315.768@51.0.1315.768" timestamp="1577547146029" />
+    <state width="1292" height="249" key="GridCell.Tab.0.right" timestamp="1577547146033">
+      <screen x="51" y="0" width="1315" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576750337721" />
+    <state width="1292" height="249" key="GridCell.Tab.0.right/51.0.1315.768@51.0.1315.768" timestamp="1577547146033" />
     <state width="1345" height="311" key="GridCell.Tab.1.bottom" timestamp="1576750337721">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -505,15 +516,19 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576750337721" />
-    <state x="316" y="104" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1577518221111">
+    <state x="316" y="104" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1577520934912">
       <screen x="51" y="0" width="1315" height="768" />
     </state>
     <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576678029395" />
-    <state x="316" y="104" width="800" height="535" key="Vcs.Push.Dialog.v2/51.0.1315.768@51.0.1315.768" timestamp="1577518221111" />
+    <state x="316" y="104" width="800" height="535" key="Vcs.Push.Dialog.v2/51.0.1315.768@51.0.1315.768" timestamp="1577520934912" />
     <state width="691" height="372" key="XDebugger.FullValuePopup" timestamp="1576750318092">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="691" height="372" key="XDebugger.FullValuePopup/0.0.1366.728@0.0.1366.728" timestamp="1576750318092" />
+    <state x="371" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1577545468296">
+      <screen x="51" y="0" width="1315" height="768" />
+    </state>
+    <state x="371" y="89" width="672" height="678" key="search.everywhere.popup/51.0.1315.768@51.0.1315.768" timestamp="1577545468296" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
