@@ -16,12 +16,12 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 58,
-  "iteration": 1576758613115,
+  "iteration": 1578033505068,
   "links": [
     {
       "icon": "external link",
       "tags": [
-        "Integration Summary - Per Task"
+        "POD Integration Summary"
       ],
       "targetBlank": true,
       "type": "dashboards"
@@ -213,7 +213,7 @@
   "schemaVersion": 19,
   "style": "dark",
   "tags": [
-    "Integration Report - Tenant"
+    "Tenant Integration Summary"
   ],
   "templating": {
     "list": [
@@ -292,7 +292,7 @@
     ]
   },
   "timezone": "",
-  "title": "Integration Summary - Tenant Level",
+  "title": "Tenant Integration Summary",
   "uid": "SQt0DSfWz",
-  "version": 3
+  "version": 4
 }
