@@ -50,7 +50,7 @@ try:
 
     #Start Point
     TIMEOUT = 60  # sec
-    timeinterval = 60  # min
+    timeinterval = 120  # min
     tenants = []
     json_body = []
     env = os.environ['envname']
