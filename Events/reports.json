@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "integration-report": {
+      "type": "standard",
+      "command": "python3.6 /etc/sensu/plugins/get-integration-report.py",
+      "subscribers": [
+        "roundrobin:vm"
+      ],
+      "interval": 7200,
+      "handlers": [
+        "tester_mailer"
+      ],
+      "source": "proxyclient",
+      "occurrences": 1
+    }
+  }
+}
